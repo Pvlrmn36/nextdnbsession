@@ -288,25 +288,25 @@ function Index() {
         {/* ATMOSPHERIC FOG */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-[2]">
 
-          <div className="absolute right-[-200px] bottom-[-100px] w-[800px] h-[800px] bg-purple-600/10 blur-[120px] rounded-full animate-fog-two" />
+          <div className="hidden md:block absolute right-[-200px] bottom-[-100px] w-[800px] h-[800px] bg-purple-600/10 blur-[120px] rounded-full animate-fog-two" />
 
-          <div className="absolute left-1/3 bottom-0 w-[500px] h-[500px] bg-cyan-300/6 blur-[90px] rounded-full animate-fog-three" />
+          <div className="hidden md:block absolute left-1/3 bottom-0 w-[500px] h-[500px] bg-cyan-300/6 blur-[90px] rounded-full animate-fog-three" />
         </div>
 
         {/* Subtle color bleed from lasers */}
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-[var(--cyan)] opacity-[0.10] blur-[140px]" />
-        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-[var(--violet)] opacity-[0.10] blur-[140px]" />
+        <div className="hidden md:block absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-[var(--cyan)] opacity-[0.10] blur-[140px]" />
+        <div className="hidden md:block absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-[var(--violet)] opacity-[0.10] blur-[140px]" />
         {/* Animated light beams */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-[2]">
-          <div className="absolute left-[-10%] top-[20%] w-[70%] h-[2px]
+          <div className="hidden md:block absolute left-[-10%] top-[20%] w-[70%] h-[2px]
   bg-cyan-300/55 blur-sm rotate-[12deg]
   animate-beam-cyan" />
 
-          <div className="absolute right-[-10%] top-[35%] w-[60%] h-[2px]
+          <div className="md:block absolute right-[-10%] top-[35%] w-[60%] h-[2px]
   bg-purple-400/55 blur-sm rotate-[-10deg]
   animate-beam-purple" />
 
-          <div className="absolute left-[20%] bottom-[25%] w-[50%] h-[1px]
+          <div className="md:block absolute left-[20%] bottom-[25%] w-[50%] h-[1px]
   bg-cyan-200/20 blur-sm rotate-[8deg]
   animate-beam-soft" />
         </div>
@@ -319,8 +319,8 @@ function Index() {
           </p>
 
           {/* Headline */}
-          <div className="absolute top-[18%] w-[420px] h-[220px] bg-cyan-400/6 blur-[90px] blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute top-[20%] w-[320px] h-[120px] bg-black/35 blur-[55px] rounded-full pointer-events-none z-0" />
+          <div className="hidden md:block absolute top-[18%] w-[420px] h-[220px] bg-cyan-400/6 blur-[90px] blur-[120px] rounded-full pointer-events-none" />
+          <div className="hidden md:block absolute top-[20%] w-[320px] h-[120px] bg-black/35 blur-[55px] rounded-full pointer-events-none z-0" />
           <div
             className="
     absolute
@@ -519,7 +519,7 @@ function Index() {
           <p className="mt-16 text-sm tracking-[0.25em] text-white/55 font-display">
             SUPPORT
           </p>
-          <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 mt-10 w-[420px] h-[420px] rounded-full bg-cyan-500/5 blur-[120px]" />
+          <div className="hidden md:block pointer-events-none absolute left-1/2 -translate-x-1/2 mt-10 w-[420px] h-[420px] rounded-full bg-cyan-500/5 blur-[120px]" />
           <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-5">
             {SUPPORT.map((dj) => (
               <article
@@ -550,7 +550,7 @@ function Index() {
       {/* TIMETABLE */}
       <div className="mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
 
-      <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-cyan-500/5 blur-[140px]" />
+      <div className="hidden md:block pointer-events-none absolute left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-cyan-500/5 blur-[140px]" />
       <section
         id="timetable"
         className="relative pt-6 pb-24 md:pt-10 md:pb-32"
@@ -679,7 +679,7 @@ items-center justify-center text-[var(--cyan)] transition">
           <img src={gallery1} alt="" className="w-full h-full object-cover opacity-25" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
         </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[var(--cyan)] opacity-10 blur-[160px]" />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[var(--cyan)] opacity-10 blur-[160px]" />
 
         <div className="relative mx-auto max-w-3xl px-5 lg:px-10 text-center">
           <p className="font-display tracking-[0.4em] text-sm text-[var(--cyan)]">
