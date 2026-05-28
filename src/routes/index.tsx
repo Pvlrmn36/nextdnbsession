@@ -35,22 +35,35 @@ const NAV = [
 ];
 
 const HEADLINERS = [
-  { name: "TR TACTICS", style: "NEURO", img: dj1 },
-  { name: "SYMPLEX", style: "NEURO", img: dj2 },
+  { name: "TR TACTICS", style: "EATBRAIN/BLACKOUT", img: dj1 },
+  { name: "SYMPLEX", style: "HOOFBEATS", img: dj2 },
+  { name: "DR.AX", style: "DARKSHIRE", img: dj2 },
 ];
 
 const SUPPORT = [
-  { name: "SUKKI", style: "HARDCORE", img: dj2 },
-  { name: "KRYPTIC", style: "NEUROFUNK", img: dj1 },
-  { name: "DRAWBACK", style: "ROLLERS", img: dj1 },
-  { name: "BASSLINE", style: "DEEP", img: dj4 },
-  { name: "FLUX", style: "NEURO", img: dj1 },
-  { name: "SHADOW", style: "ROLLERS", img: dj2 },
-  { name: "REZIN", style: "DEEP", img: dj3 },
-  { name: "VIPER", style: "HARDCORE", img: dj4 },
-  { name: "ECHO", style: "NEURO", img: dj1 },
-  { name: "OBSCURA", style: "DEEP", img: dj2 },
-  { name: "MC PULSE", style: "MC", img: dj4 },
+  { name: "TYBERUS", style: "NEUROFUNK", img: dj1 },
+  { name: "XENYH", style: "ROLLERS", img: dj1 },
+  { name: "AUDIO ASSAULT", style: "MC", img: dj4 },
+  { name: "DOGMA", style: "MC", img: dj4 },
+  { name: "SHOGUN TACTIC", style: "MC", img: dj4 },
+  { name: "AWOKEN", style: "DEEP", img: dj4 },
+  { name: "MIRO", style: "NEURO", img: dj1 },
+  { name: "NASAY", style: "ROLLERS", img: dj2 },
+  { name: "TOTO", style: "DEEP", img: dj3 },
+  { name: "ILL-FATED", style: "HARDCORE", img: dj4 },
+  { name: "M.G.", style: "NEURO", img: dj1 },
+  { name: "L-ORI", style: "DEEP", img: dj2 },
+  { name: "ILLSICK", style: "MC", img: dj4 },
+  { name: "SHILLET", style: "MC", img: dj4 },
+  { name: "ONEBLOOD", style: "MC", img: dj4 },
+  { name: "POLIPHONIC", style: "MC", img: dj4 },
+  { name: "ADYX", style: "MC", img: dj4 },
+  { name: "WATERONE", style: "MC", img: dj4 },
+  { name: "SPOONER", style: "MC", img: dj4 },
+  { name: "DRAWBACK", style: "MC", img: dj4 },
+  { name: "BABS", style: "MC", img: dj4 },
+  { name: "TOBI", style: "MC", img: dj4 },
+  { name: "JORIS", style: "MC", img: dj4 },
 ];
 
 const TIMETABLE = [
@@ -89,6 +102,10 @@ const FAQ = [
 ];
 const EVENT_DATE = new Date("2026-06-06T17:00:00");
 function Index() {
+  const [showAllSupport, setShowAllSupport] = useState(false);
+
+const visibleSupport = showAllSupport ? SUPPORT : SUPPORT.slice(0, 12);
+const hiddenSupportCount = SUPPORT.length - 12;
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
@@ -314,7 +331,7 @@ function Index() {
         {/* Centered cinematic composition */}
         <div className="relative z-10 mx-auto w-full max-w-5xl px-5 lg:px-10 pt-24 pb-20 flex flex-col items-center text-center">
           {/* Top tagline */}
-          <p className="font-display tracking-[0.99em] hidden md:block font-display tracking-[0.45em] text-xs text-cyan-300/90 text-cyan-300/80">
+          <p className="hidden md:block font-display tracking-[0.6em] text-xs text-cyan-300/85">
             — DNB · OPEN AIR · CZ —
           </p>
 
@@ -361,10 +378,10 @@ function Index() {
           </p>
           {/* COUNTDOWN */}
 
-          <div className="mt-7 flex items-center justify-center gap-4 md:gap-8 text-center">
+          <div className="mt-5 flex items-center justify-center gap-4 md:gap-6 text-center">
 
             <div className="w-[52px]">
-              <div className="text-3xl md:text-2xl font-display text-white/90 tracking-[0.2em]">
+              <div className="text-3xl md:text-3xl font-display text-white/90 tracking-[0.12em]">
                 {String(timeLeft.days).padStart(2, "0")}
               </div>
 
@@ -374,7 +391,7 @@ function Index() {
             </div>
 
             <div className="w-[52px]">
-              <div className="text-3xl md:text-2xl font-display text-white/90 tracking-[0.2em]">
+              <div className="text-3xl md:text-3xl font-display text-white/90 tracking-[0.12em]">
                 {String(timeLeft.hours).padStart(2, "0")}
               </div>
 
@@ -384,13 +401,13 @@ function Index() {
             </div>
 
             <div className="w-[52px]">
-              <div className="text-3xl md:text-2xl font-display text-white/90 tracking-[0.2em]">
+              <div className="text-3xl md:text-3xl font-display text-white/90 tracking-[0.12em]">
                 {String(timeLeft.minutes).padStart(2, "0")}
               </div>
 
-              <div className="mt-1 text-[9px] md:text-xs tracking-[0.18em] text-cyan-300/55">
-                MINUTES
-              </div>
+              <div className="mt-1 text-[9px] md:text-xs tracking-[0.1em] text-cyan-300/55 pl-0 -ml-[2px]">
+  MINUTES
+</div>
             </div>
 
           </div>
@@ -460,11 +477,11 @@ function Index() {
           </h2>
           <div className="mt-10 grid md:grid-cols-2 gap-10 items-start">
             <p className="text-base md:text-lg leading-[1.9] text-white/70">
-              <span className="text-foreground font-semibold">NEXT DNB SESSION</span> je letní open air akce pro všechny, kteří milují deep vibe, těžkou basu a noční atmosféru pod širým nebem. Každý rok spojujeme komunitu lidí, které baví kvalitní DNB, silný sound a energie, kterou musíš zažít na vlastní kůži.
+              <span className="text-foreground font-semibold">NEXT DNB SESSION</span> je letní open air akce pro ty, kteří milují deep vibe, těžkou basu a noční atmosféru pod širým nebem. Místo, kde se každé léto potkávají milovníci DNB.
 
             </p>
             <p className="text-base md:text-lg leading-[1.9] text-white/70">
-              Žádný přeplácaný festival. Jen hudba, lasery, kouř a lidi, kteří přišli kvůli stejné věci. Od západu slunce až do rána jedeme deep, rollers, neuro i hard DNB v atmosféře, kterou jinde nenajdeš.
+              Žádný přeplácaný festival. Jen hudba a lidi, kteří přišli kvůli stejné věci. Od západu slunce až do rána jedeme naplno deep, rollers, neuro i hard DNB. Přidáš se?
             </p>
 
           </div>
@@ -476,76 +493,120 @@ function Index() {
       </div>
 
       {/* LINEUP */}
-      <section
-        id="lineup"
-        className="relative pt-6 pb-24 md:pt-16 md:pb-32"
-      >
-        <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <h2 className="section-title font-display text-3xl md:text-5xl text-foreground">
-            LINEUP
-          </h2>
-          <p className="mt-4 text-sm tracking-[0.2em] text-muted-foreground font-display">
-            HEADLINERS
-          </p>
+<section
+  id="lineup"
+  className="relative pt-6 pb-24 md:pt-16 md:pb-32"
+>
+  <div className="mx-auto max-w-7xl px-5 lg:px-10">
+    <h2 className="section-title font-display text-3xl md:text-5xl text-foreground">
+      LINEUP
+    </h2>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {HEADLINERS.map((dj) => (
-              <article
-                key={dj.name}
-                className="group relative aspect-[5/6] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] hover:border-cyan-400/30 hover:shadow-[0_0_30px_rgba(0,255,255,0.08)] transition-all duration-500"
-              >
-                <img
-                  src={dj.img}
-                  alt={dj.name}
-                  loading="lazy"
-                  width={768}
-                  height={768}
-                  className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
-                  <h3 className="font-display text-2xl md:text-4xl text-white tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">{dj.name}</h3>
-                  <p className="mt-1 text-xs tracking-[0.2em] text-[var(--cyan)] font-display">
-                    {dj.style}
-                  </p>
-                </div>
-                <div className="absolute top-3 left-3 px-2 py-1 rounded bg-[var(--cyan)]/90 text-primary-foreground text-[10px] font-display tracking-[0.2em]">
-                  HEADLINER
-                </div>
-              </article>
-            ))}
-          </div>
+    <p className="mt-4 text-sm tracking-[0.2em] text-muted-foreground font-display">
+      HEADLINERS
+    </p>
 
-          <p className="mt-16 text-sm tracking-[0.25em] text-white/55 font-display">
-            SUPPORT
-          </p>
-          <div className="hidden md:block pointer-events-none absolute left-1/2 -translate-x-1/2 mt-10 w-[420px] h-[420px] rounded-full bg-cyan-500/5 blur-[120px]" />
-          <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-5">
-            {SUPPORT.map((dj) => (
-              <article
-                key={dj.name}
-                className="group relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] hover:border-cyan-400/25 hover:shadow-[0_0_22px_rgba(0,255,255,0.06)] transition-all duration-500"
-              >
-                <img
-                  src={dj.img}
-                  alt={dj.name}
-                  loading="lazy"
-                  width={400}
-                  height={400}
-                  className="absolute inset-0 w-full h-full object-cover opacity-75 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-4">
-                  <h4 className="font-display text-base text-foreground">{dj.name}</h4>
-                  <p className="text-[10px] tracking-[0.2em] text-[var(--cyan)] font-display">
-                    {dj.style}
-                  </p>
-                </div>
-              </article>
-            ))}
+    <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+      {HEADLINERS.map((dj, index) => (
+        <article
+          key={`${dj.name}-${index}`}
+          className="group relative aspect-[4/4.5] overflow-hidden rounded-2xl border border-violet-400/25 shadow-[0_0_25px_rgba(168,85,247,0.08)] bg-white/[0.02] hover:border-cyan-400/30 hover:shadow-[0_0_30px_rgba(0,255,255,0.08)] transition-all duration-500"
+        >
+          <img
+            src={dj.img}
+            alt={dj.name}
+            loading="lazy"
+            width={768}
+            height={768}
+            className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
+            <h3 className="font-display text-2xl md:text-3xl text-white tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">
+              {dj.name}
+            </h3>
+            <p className="mt-1 text-xs tracking-[0.2em] text-cyan-300/75 font-display">
+              {dj.style}
+            </p>
           </div>
+          <div className="absolute top-3 left-3 px-2 py-1 rounded bg-[var(--cyan)]/90 text-primary-foreground text-[10px] font-display tracking-[0.2em]">
+            HEADLINER
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <p className="mt-16 text-sm tracking-[0.25em] text-white/55 font-display">
+      SUPPORT
+    </p>
+
+    <div className="hidden md:block pointer-events-none absolute left-1/2 -translate-x-1/2 mt-10 w-[420px] h-[420px] rounded-full bg-cyan-500/5 blur-[120px]" />
+
+    {/* MOBILE SUPPORT LIST */}
+    <div className="mt-6 grid grid-cols-2 gap-3 md:hidden">
+      {(showAllSupport ? SUPPORT : SUPPORT.slice(0, 8)).map((dj) => (
+        <div
+          key={dj.name}
+          className="rounded-xl border border-violet-400/20 bg-white/[0.03] px-4 py-3 text-center"
+        >
+          <p className="font-display text-base tracking-[0.08em] text-white">
+            {dj.name}
+          </p>
+          <p className="mt-1 text-[10px] tracking-[0.14em] text-cyan-300/75 font-display">
+            {dj.style}
+          </p>
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* DESKTOP SUPPORT CARDS */}
+    <div className="hidden md:grid mt-6 grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-5">
+      {visibleSupport.map((dj, index) => (
+        <article
+          key={`${dj.name}-${index}`}
+          className="group relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] hover:border-cyan-400/25 hover:shadow-[0_0_22px_rgba(0,255,255,0.06)] transition-all duration-500"
+        >
+          <img
+            src={dj.img}
+            alt={dj.name}
+            loading="lazy"
+            width={400}
+            height={400}
+            className="absolute inset-0 w-full h-full object-cover opacity-75 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 p-4">
+            <h4 className="font-display text-base text-foreground">
+              {dj.name}
+            </h4>
+            <p className="text-[10px] tracking-[0.2em] text-[var(--cyan)] font-display">
+              {dj.style}
+            </p>
+          </div>
+        </article>
+      ))}
+      {SUPPORT.length > 12 && (
+  <div className="col-span-full mt-8 flex justify-center">
+    <button
+      type="button"
+      onClick={() => setShowAllSupport((prev) => !prev)}
+      className={`
+        rounded-xl border px-7 py-3 font-display text-xs tracking-[0.25em]
+        transition-all duration-300
+        ${
+  showAllSupport
+    ? "border-violet-500/60 bg-violet-900/30 text-violet-300 shadow-[0_0_18px_rgba(139,92,246,0.15)]"
+    : "border-cyan-400/40 text-cyan-300/80 hover:border-violet-500/60 hover:bg-violet-900/20 hover:text-violet-300 hover:shadow-[0_0_18px_rgba(139,92,246,0.12)]"
+}
+`}
+    >
+      {showAllSupport ? "SHOW LESS" : `+${hiddenSupportCount} MORE ARTISTS`}
+    </button>
+  </div>
+)}
+    </div>
+  </div>
+</section>
 
       {/* TIMETABLE */}
       <div className="mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
