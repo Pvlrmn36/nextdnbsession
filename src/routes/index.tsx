@@ -104,8 +104,8 @@ const EVENT_DATE = new Date("2026-06-06T17:00:00");
 function Index() {
   const [showAllSupport, setShowAllSupport] = useState(false);
 
-const visibleSupport = showAllSupport ? SUPPORT : SUPPORT.slice(0, 12);
-const hiddenSupportCount = SUPPORT.length - 12;
+  const visibleSupport = showAllSupport ? SUPPORT : SUPPORT.slice(0, 12);
+  const hiddenSupportCount = SUPPORT.length - 12;
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
@@ -162,7 +162,13 @@ const hiddenSupportCount = SUPPORT.length - 12;
         return;
       }
       setScrolled(window.scrollY > 30);
-
+if (
+  window.innerHeight + window.scrollY >=
+  document.body.offsetHeight - 80
+) {
+  setActiveSection("kontakt");
+  return;
+}
       const sections = NAV.map((n) => n.id);
       const scrollY = window.scrollY + 120;
 
@@ -219,8 +225,8 @@ const hiddenSupportCount = SUPPORT.length - 12;
                 key={n.id}
                 onClick={() => go(n.id)}
                 className={`text-[11px] tracking-[0.25em] font-display transition-colors ${activeSection === n.id
-                    ? "text-[#6a4cff]"
-                    : "text-muted-foreground hover:text-[var(--cyan)]"
+                  ? "text-[#4f35bf]"
+                  : "text-muted-foreground hover:text-[var(--cyan)]"
                   }`}
               >
                 {n.label}
@@ -229,7 +235,11 @@ const hiddenSupportCount = SUPPORT.length - 12;
 
             <button
               onClick={() => go("vstupenky")}
-              className="px-5 py-2 rounded-md bg-[#14bccd] hover:bg-[#4f35bf] text-primary-foreground font-display tracking-[0.25em] text-[11px] glow-cyan hover:brightness-110 transition"
+              className={`px-5 py-2 rounded-md text-primary-foreground font-display tracking-[0.25em] text-[11px] glow-cyan transition ${
+  activeSection === "vstupenky"
+    ? "bg-[#4f35bf] text-white"
+    : "bg-[#14bccd] hover:bg-[#4f35bf] hover:text-white hover:brightness-110"
+}`}
             >
               VSTUPENKY
             </button>
@@ -406,8 +416,8 @@ const hiddenSupportCount = SUPPORT.length - 12;
               </div>
 
               <div className="mt-1 text-[9px] md:text-xs tracking-[0.1em] text-cyan-300/55 pl-0 -ml-[2px]">
-  MINUTES
-</div>
+                MINUTES
+              </div>
             </div>
 
           </div>
@@ -444,13 +454,16 @@ const hiddenSupportCount = SUPPORT.length - 12;
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <button
               onClick={() => go("vstupenky")}
-              className="px-8 py-3.5 rounded-md bg-[#14bccd] text-primary-foreground font-display tracking-[0.3em] text-[13px] glow-cyan hover:brightness-110 transition"
+              className="px-8 py-3.5 rounded-md bg-[#14bccd] text-primary-foreground font-display tracking-[0.3em] text-[13px] glow-cyan hover:bg-[#4f35bf] hover:text-white
+hover:shadow-[0_0_28px_rgba(79,53,191,0.35)]"
             >
               KOUPIT VSTUPENKY
             </button>
             <button
               onClick={() => go("lineup")}
-              className="px-8 py-4 rounded-md border border-[var(--cyan)] text-foreground font-display tracking-[0.3em] text-sm shadow-[0_0_24px_oklch(0.85_0.18_190/0.2)] hover:bg-[var(--cyan)]/10 hover:shadow-[0_0_32px_oklch(0.85_0.18_190/0.35)] transition"
+              className="px-8 py-4 rounded-md border border-[var(--cyan)] text-foreground font-display tracking-[0.3em] text-sm shadow-[0_0_24px_oklch(0.85_0.18_190/0.2)] hover:bg-[#4f35bf]/15
+hover:border-[#4f35bf]
+hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
             >
               LINEUP
             </button>
@@ -493,120 +506,120 @@ const hiddenSupportCount = SUPPORT.length - 12;
       </div>
 
       {/* LINEUP */}
-<section
-  id="lineup"
-  className="relative pt-6 pb-24 md:pt-16 md:pb-32"
->
-  <div className="mx-auto max-w-7xl px-5 lg:px-10">
-    <h2 className="section-title font-display text-3xl md:text-5xl text-foreground">
-      LINEUP
-    </h2>
+      <section
+        id="lineup"
+        className="relative pt-6 pb-24 md:pt-16 md:pb-32"
+      >
+        <div className="mx-auto max-w-7xl px-5 lg:px-10">
+          <h2 className="section-title font-display text-3xl md:text-5xl text-foreground">
+            LINEUP
+          </h2>
 
-    <p className="mt-4 text-sm tracking-[0.2em] text-muted-foreground font-display">
-      HEADLINERS
-    </p>
-
-    <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
-      {HEADLINERS.map((dj, index) => (
-        <article
-          key={`${dj.name}-${index}`}
-          className="group relative aspect-[4/4.5] overflow-hidden rounded-2xl border border-violet-400/25 shadow-[0_0_25px_rgba(168,85,247,0.08)] bg-white/[0.02] hover:border-cyan-400/30 hover:shadow-[0_0_30px_rgba(0,255,255,0.08)] transition-all duration-500"
-        >
-          <img
-            src={dj.img}
-            alt={dj.name}
-            loading="lazy"
-            width={768}
-            height={768}
-            className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
-            <h3 className="font-display text-2xl md:text-3xl text-white tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">
-              {dj.name}
-            </h3>
-            <p className="mt-1 text-xs tracking-[0.2em] text-cyan-300/75 font-display">
-              {dj.style}
-            </p>
-          </div>
-          <div className="absolute top-3 left-3 px-2 py-1 rounded bg-[var(--cyan)]/90 text-primary-foreground text-[10px] font-display tracking-[0.2em]">
-            HEADLINER
-          </div>
-        </article>
-      ))}
-    </div>
-
-    <p className="mt-16 text-sm tracking-[0.25em] text-white/55 font-display">
-      SUPPORT
-    </p>
-
-    <div className="hidden md:block pointer-events-none absolute left-1/2 -translate-x-1/2 mt-10 w-[420px] h-[420px] rounded-full bg-cyan-500/5 blur-[120px]" />
-
-    {/* MOBILE SUPPORT LIST */}
-    <div className="mt-6 grid grid-cols-2 gap-3 md:hidden">
-      {(showAllSupport ? SUPPORT : SUPPORT.slice(0, 8)).map((dj) => (
-        <div
-          key={dj.name}
-          className="rounded-xl border border-violet-400/20 bg-white/[0.03] px-4 py-3 text-center"
-        >
-          <p className="font-display text-base tracking-[0.08em] text-white">
-            {dj.name}
+          <p className="mt-4 text-sm tracking-[0.2em] text-muted-foreground font-display">
+            HEADLINERS
           </p>
-          <p className="mt-1 text-[10px] tracking-[0.14em] text-cyan-300/75 font-display">
-            {dj.style}
-          </p>
-        </div>
-      ))}
-    </div>
 
-    {/* DESKTOP SUPPORT CARDS */}
-    <div className="hidden md:grid mt-6 grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-5">
-      {visibleSupport.map((dj, index) => (
-        <article
-          key={`${dj.name}-${index}`}
-          className="group relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] hover:border-cyan-400/25 hover:shadow-[0_0_22px_rgba(0,255,255,0.06)] transition-all duration-500"
-        >
-          <img
-            src={dj.img}
-            alt={dj.name}
-            loading="lazy"
-            width={400}
-            height={400}
-            className="absolute inset-0 w-full h-full object-cover opacity-75 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 p-4">
-            <h4 className="font-display text-base text-foreground">
-              {dj.name}
-            </h4>
-            <p className="text-[10px] tracking-[0.2em] text-[var(--cyan)] font-display">
-              {dj.style}
-            </p>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            {HEADLINERS.map((dj, index) => (
+              <article
+                key={`${dj.name}-${index}`}
+                className="group relative aspect-[4/4.5] overflow-hidden rounded-2xl border border-violet-400/25 shadow-[0_0_25px_rgba(168,85,247,0.08)] bg-white/[0.02] hover:border-cyan-400/30 hover:shadow-[0_0_30px_rgba(0,255,255,0.08)] transition-all duration-500"
+              >
+                <img
+                  src={dj.img}
+                  alt={dj.name}
+                  loading="lazy"
+                  width={768}
+                  height={768}
+                  className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
+                  <h3 className="font-display text-2xl md:text-3xl text-white tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">
+                    {dj.name}
+                  </h3>
+                  <p className="mt-1 text-xs tracking-[0.2em] text-cyan-300/75 font-display">
+                    {dj.style}
+                  </p>
+                </div>
+                <div className="absolute top-3 left-3 px-2 py-1 rounded bg-[var(--cyan)]/90 text-primary-foreground text-[10px] font-display tracking-[0.2em]">
+                  HEADLINER
+                </div>
+              </article>
+            ))}
           </div>
-        </article>
-      ))}
-      {SUPPORT.length > 12 && (
-  <div className="col-span-full mt-8 flex justify-center">
-    <button
-      type="button"
-      onClick={() => setShowAllSupport((prev) => !prev)}
-      className={`
+
+          <p className="mt-16 text-sm tracking-[0.25em] text-white/55 font-display">
+            SUPPORT
+          </p>
+
+          <div className="hidden md:block pointer-events-none absolute left-1/2 -translate-x-1/2 mt-10 w-[420px] h-[420px] rounded-full bg-cyan-500/5 blur-[120px]" />
+
+          {/* MOBILE SUPPORT LIST */}
+          <div className="mt-6 grid grid-cols-2 gap-3 md:hidden">
+            {(showAllSupport ? SUPPORT : SUPPORT.slice(0, 8)).map((dj) => (
+              <div
+                key={dj.name}
+                className="rounded-xl border border-violet-400/20 bg-white/[0.03] px-4 py-3 text-center"
+              >
+                <p className="font-display text-base tracking-[0.08em] text-white">
+                  {dj.name}
+                </p>
+                <p className="mt-1 text-[10px] tracking-[0.14em] text-cyan-300/75 font-display">
+                  {dj.style}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* DESKTOP SUPPORT CARDS */}
+          <div className="hidden md:grid mt-6 grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-5">
+            {visibleSupport.map((dj, index) => (
+              <article
+                key={`${dj.name}-${index}`}
+                className="group relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] hover:border-cyan-400/25 hover:shadow-[0_0_22px_rgba(0,255,255,0.06)] transition-all duration-500"
+              >
+                <img
+                  src={dj.img}
+                  alt={dj.name}
+                  loading="lazy"
+                  width={400}
+                  height={400}
+                  className="absolute inset-0 w-full h-full object-cover opacity-75 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-4">
+                  <h4 className="font-display text-base text-foreground">
+                    {dj.name}
+                  </h4>
+                  <p className="text-[10px] tracking-[0.2em] text-[var(--cyan)] font-display">
+                    {dj.style}
+                  </p>
+                </div>
+              </article>
+            ))}
+            {SUPPORT.length > 12 && (
+              <div className="col-span-full mt-8 flex justify-center">
+                <button
+                  type="button"
+                  onClick={() => setShowAllSupport((prev) => !prev)}
+                  className={`
         rounded-xl border px-7 py-3 font-display text-xs tracking-[0.25em]
         transition-all duration-300
         ${
   showAllSupport
-    ? "border-violet-500/60 bg-violet-900/30 text-violet-300 shadow-[0_0_18px_rgba(139,92,246,0.15)]"
-    : "border-cyan-400/40 text-cyan-300/80 hover:border-violet-500/60 hover:bg-violet-900/20 hover:text-violet-300 hover:shadow-[0_0_18px_rgba(139,92,246,0.12)]"
+    ? "border-[#4f35bf] bg-[#4f35bf]/20 text-white shadow-[0_0_18px_rgba(79,53,191,0.25)]"
+    : "border-cyan-400/40 text-cyan-300/80 hover:border-[#4f35bf] hover:bg-[#4f35bf]/15 hover:text-white hover:shadow-[0_0_18px_rgba(79,53,191,0.20)]"
 }
 `}
-    >
-      {showAllSupport ? "SHOW LESS" : `+${hiddenSupportCount} MORE ARTISTS`}
-    </button>
-  </div>
-)}
-    </div>
-  </div>
-</section>
+                >
+                  {showAllSupport ? "SHOW LESS" : `+${hiddenSupportCount} MORE ARTISTS`}
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
 
       {/* TIMETABLE */}
       <div className="mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
@@ -652,7 +665,7 @@ const hiddenSupportCount = SUPPORT.length - 12;
 items-center justify-center text-[var(--cyan)] transition">
                   <Icon size={22} />
                 </div>
-                <h3 className="mt-4 font-display text-xl tracking-wider text-foreground group-hover:text-[#6a4cff] transition-colors duration-300">
+                <h3 className="mt-4 font-display text-xl tracking-wider text-foreground group-hover:text-[#4f35bf] transition-colors duration-300">
                   {title}
                 </h3>
                 <p className="mt-2 whitespace-pre-line text-sm text-muted-foreground">
@@ -663,7 +676,7 @@ items-center justify-center text-[var(--cyan)] transition">
                     href="https://www.google.com/maps/place/49%C2%B035'41.2%22N+17%C2%B007'17.4%22E/@49.5947666,17.1208207,153m/data=!3m1!1e3!4m13!1m8!3m7!1s0x47124515a86ccca3:0x105f269da1c03cd!2zVMSbxaFldGljZSwgNzgzIDQ2IFTEm8WhZXRpY2U!3b1!8m2!3d49.5931724!4d17.1260751!16s%2Fm%2F06zk_qd!3m3!8m2!3d49.5947778!4d17.1215?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-3 mx-auto flex w-fit items-center gap-1.5 rounded-md border border-[#6a4cff]/40 px-3 py-1.5 text-[10px] tracking-[0.16em] text-white/70 hover:border-[#6a4cff] hover:text-[#6a4cff] transition-all duration-300"
+                    className="mt-3 mx-auto flex w-fit items-center gap-1.5 rounded-md border border-[#4f35bf]/20 px-3 py-1.5 text-[10px] tracking-[0.16em] text-white/70 hover:border-[#4f35bf] hover:text-white transition-all duration-300"
                   >
                     <MapPin className="w-4 h-4" />
                     NAVIGOVAT
@@ -720,9 +733,9 @@ items-center justify-center text-[var(--cyan)] transition">
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="rounded-2xl border border-border/60 bg-white/[0.02] px-6 transition-all duration-300 hover:border-[#6a4cff]/40"
+                className="rounded-2xl border border-border/60 bg-white/[0.02] px-6 transition-all duration-300 hover:border-[#4f35bf]/40"
               >
-                <AccordionTrigger className="font-display text-lg tracking-[0.18em] text-foreground hover:text-[#6a4cff] hover:no-underline text-left py-6 transition-colors duration-300">
+                <AccordionTrigger className="font-display text-lg tracking-[0.18em] text-foreground hover:text-[#4f35bf] hover:no-underline text-left py-6 transition-colors duration-300">
                   {item.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base leading-relaxed">
@@ -779,7 +792,11 @@ items-center justify-center text-[var(--cyan)] transition">
 
           <a
             href="#"
-            className="mt-10 inline-flex items-center gap-3 px-10 py-5 rounded-md bg-[#14bccd] text-primary-foreground font-display tracking-[0.25em] text-base glow-cyan hover:brightness-110 transition"
+            className="mt-10 inline-flex items-center gap-3 px-10 py-5 rounded-md bg-[#14bccd]
+text-primary-foreground font-display tracking-[0.25em] text-base glow-cyan
+hover:bg-[#4f35bf] hover:text-white
+hover:shadow-[0_0_28px_rgba(79,53,191,0.35)]
+transition"
           >
             <Ticket size={20} />
             KOUPIT VSTUPENKY
@@ -826,7 +843,7 @@ items-center justify-center text-[var(--cyan)] transition">
 
           <div className="text-center">
 
-            <p className="mt-2 font-display text-l tracking-[0.2em] text-foreground">
+            <p className="mt-2 font-display text-l tracking-[0.2em] text-muted-foreground">
               sociální sítě
             </p>
 
@@ -843,9 +860,9 @@ items-center justify-center text-[var(--cyan)] transition">
       flex items-center justify-center
       text-foreground/80
       transition-all duration-300
-      hover:border-[#6a4cff]
-      hover:text-[#6a4cff]
-      hover:shadow-[0_0_18px_rgba(106,76,255,0.35)]
+      hover:border-[#4f35bf]
+hover:text-[#4f35bf]
+hover:bg-transparent
       hover:-translate-y-[2px]
     "
               >
@@ -867,9 +884,9 @@ items-center justify-center text-[var(--cyan)] transition">
       flex items-center justify-center
       text-foreground/80
       transition-all duration-300
-      hover:border-[#6a4cff]
-      hover:text-[#6a4cff]
-      hover:shadow-[0_0_18px_rgba(106,76,255,0.35)]
+      hover:border-[#4f35bf]
+hover:text-[#4f35bf]
+hover:bg-transparent
       hover:-translate-y-[2px]
     "
               >
