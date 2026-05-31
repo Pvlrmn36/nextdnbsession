@@ -72,7 +72,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "NEXT D'N'B SESSION — Open Air Drum n Bass" },
+      { title: "NEXT DNB SESSION — Open Air Drum n Bass" },
       { name: "description", content: "NEXT DNB SESSION — underground drum and bass open air v Těšeticích u Olomouce. Deep, Rollers, Neuro a Hardcore pod širým nebem. 06 / 06 / 2026." },
       { property: "og:title", content: "NEXT DNB SESSION" },
       { property: "og:description", content: "Letní open air drum and bass akce. DEEP • ROLLERS • NEURO • HARDCORE." },

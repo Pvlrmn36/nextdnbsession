@@ -7,12 +7,12 @@ import {
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
-import logo from "@/assets/logo transparent.png";
+import logo from "@/assets/Logo NxtDNB.png";
 import logoneuroporn from "@/assets/Neuroporn.png";
 import hero from "@/assets/backgroundhero.png";
-import dj1 from "@/assets/drawback.png";
-import dj2 from "@/assets/drawback.png";
-import dj3 from "@/assets/drawback.png";
+import dj1 from "@/assets/TR TACTICS.png";
+import dj2 from "@/assets/SYMPLEX.png";
+import dj3 from "@/assets/DR.AX.png";
 import dj4 from "@/assets/drawback.png";
 import gallery1 from "@/assets/gallery1.jpg";
 import gallery2 from "@/assets/gallery2.jpg";
@@ -35,9 +35,9 @@ const NAV = [
 ];
 
 const HEADLINERS = [
-  { name: "TR TACTICS", style: "EATBRAIN/BLACKOUT", img: dj1 },
-  { name: "SYMPLEX", style: "HOOFBEATS", img: dj2 },
-  { name: "DR.AX", style: "DARKSHIRE", img: dj2 },
+  { name: "TR TACTICS", style: "EATBRAIN/BLACKOUT", img: dj1, bio: "Je rakouský producent a DJ, který se řadí mezi špičku evropského neurofunku. Jeho charakteristický zvuk stojí na masivních basových linkách, strojově přesných beatech a technicky propracovaných setech, které posouvají zážitek na maximum." },
+  { name: "SYMPLEX", style: "HOOFBEATS", img: dj2, bio: "Patří mezi nejvýraznější jména české DNB scény. Jeho sety spojují roky zkušeností, nevyčerpatelnou energii a špičkový neurofunk. Na pódiu vytváří atmosféru, která zaručeně roztančí všechny milovníky tvrdých bas a moderního DNB." },
+  { name: "DR.AX", style: "DARKSHIRE", img: dj3, bio: "Přináší energické neurofunk sety plné rychlých mixů, temné atmosféry a neúprosného tempa. Jeho pečlivě vybraný výběr tracků a cit pro gradaci vytváří intenzivní zážitek od prvního do posledního dropu." },
 ];
 
 const SUPPORT = [
@@ -87,18 +87,18 @@ const INFO = [
   { icon: MapPin, title: "LOKACE", text: "Těšetice u Olomouce • areál hřiště" },
   { icon: ParkingCircle, title: "PARKOVÁNÍ", text: "Omezená kapacita • doporučujeme spolujízdu" },
 
-  { icon: Banknote, title: "PLATBA", text: "Vstup cash only • bar cash / QR platby" },
-  { icon: Beer, title: "BAR", text: "Pivo • drinky • nealko\nBar otevřený po celou noc" },
-  { icon: HeartHandshake, title: "RESPEKT", text: "Respekt k lidem, hudbě i místu\nZero tolerance pro konflikty" },
-  { icon: Trees, title: "OPEN AIR", text: "DNB pod širým nebem až do rána\nStage u hřiště • rave atmosféra" },
+  { icon: Banknote, title: "PLATBA", text: "Vstup hotově • bar hotově / QR platby" },
+  { icon: Beer, title: "BAR", text: "Pivo • drinky • nealko\nOtevřený po celou noc" },
+  { icon: HeartHandshake, title: "RESPEKT", text: "Respekt k lidem, hudbě i místu\nŽádná tolerance pro konflikty" },
+  { icon: Trees, title: "OPEN AIR", text: "DNB pod širým nebem\nStage u hřiště • rave atmosféra" },
 ];
 
 const FAQ = [
   { q: "KDE SE AKCE KONÁ?", a: "Akce se koná v Těšeticích u Olomouce u fotbalového hřiště. Přesnou trasu a mapu najdeš v sekci INFO ." },
   { q: "JAK JE TO S PARKOVÁNÍM?", a: "Kapacita parkování je omezená. Doporučujeme přijet společně autem nebo využít spolujízdu." },
-  { q: "JAK U NÁS ZAPLATÍŠ?", a: "Vstup na místě pouze hotově. Bar přijímá cash i QR platby." },
+  { q: "JAK U NÁS ZAPLATÍŠ?", a: "Vstup na místě pouze hotově. Bar přijímá hotovost i QR platby." },
   { q: "JE MOŽNÉ PŘESPAT?", a: "Oficiální camp není k dispozici. Mysli na bezpečný odvoz domů." },
-  { q: "CO NA MÍSTĚ NAJDU?", a: "Kvalitní sound a lidi, kteří jedou drum and bass naplno až do rána." },
+  { q: "CO NA MÍSTĚ NAJDU?", a: "Kvalitní sound a lidi, kteří jedou DNB naplno až do rána." },
 ];
 const EVENT_DATE = new Date("2026-06-06T17:00:00");
 function Index() {
@@ -110,6 +110,7 @@ function Index() {
     x: 0,
     y: 0,
   });
+  const [flippedHeadliner, setFlippedHeadliner] = useState<string | null>(null);
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
@@ -162,13 +163,13 @@ function Index() {
         return;
       }
       setScrolled(window.scrollY > 30);
-if (
-  window.innerHeight + window.scrollY >=
-  document.body.offsetHeight - 80
-) {
-  setActiveSection("kontakt");
-  return;
-}
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 80
+      ) {
+        setActiveSection("kontakt");
+        return;
+      }
       const sections = NAV.map((n) => n.id);
       const scrollY = window.scrollY + 120;
 
@@ -235,11 +236,10 @@ if (
 
             <button
               onClick={() => go("vstupenky")}
-              className={`px-5 py-2 rounded-md text-primary-foreground font-display tracking-[0.25em] text-[11px] glow-cyan transition ${
-  activeSection === "vstupenky"
-    ? "bg-[#4f35bf] text-white"
-    : "bg-[#14bccd] hover:bg-[#4f35bf] hover:text-white hover:brightness-110"
-}`}
+              className={`px-5 py-2 rounded-md text-primary-foreground font-display tracking-[0.25em] text-[11px] glow-cyan transition ${activeSection === "vstupenky"
+                ? "bg-[#4f35bf] text-white"
+                : "bg-[#1AC7D4] hover:bg-[#4f35bf] hover:text-white hover:brightness-110"
+                }`}
             >
               VSTUPENKY
             </button>
@@ -269,7 +269,7 @@ if (
 
               <button
                 onClick={() => go("vstupenky")}
-                className="mt-2 px-5 py-2.5 rounded-md bg-[var(--cyan)] text-primary-foreground font-display tracking-[0.25em] text-sm"
+                className="mt-2 px-5 py-2.5 rounded-md bg-[#1AC7D4] text-primary-foreground font-display tracking-[0.25em] text-sm"
               >
                 VSTUPENKY
               </button>
@@ -454,14 +454,14 @@ if (
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <button
               onClick={() => go("vstupenky")}
-              className="px-8 py-3.5 rounded-md bg-[#14bccd] text-primary-foreground font-display tracking-[0.3em] text-[13px] glow-cyan hover:bg-[#4f35bf] hover:text-white
+              className="px-8 py-3.5 rounded-md bg-[#1AC7D4] text-primary-foreground font-display tracking-[0.3em] text-[13px] hover:bg-[#4f35bf] hover:text-white
 hover:shadow-[0_0_28px_rgba(79,53,191,0.35)]"
             >
               KOUPIT VSTUPENKY
             </button>
             <button
               onClick={() => go("lineup")}
-              className="px-8 py-4 rounded-md border border-[var(--cyan)] text-foreground font-display tracking-[0.3em] text-sm shadow-[0_0_24px_oklch(0.85_0.18_190/0.2)] hover:bg-[#4f35bf]/15
+              className="px-8 py-4 rounded-md border border-[#1AC7D4] text-foreground font-display tracking-[0.3em] text-sm shadow-[0_0_24px_oklch(0.85_0.18_190/0.2)] hover:bg-[#4f35bf]/15
 hover:border-[#4f35bf]
 hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
             >
@@ -523,27 +523,63 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
             {HEADLINERS.map((dj, index) => (
               <article
                 key={`${dj.name}-${index}`}
-                className="group relative aspect-[4/4.5] overflow-hidden rounded-2xl border border-violet-400/25 shadow-[0_0_25px_rgba(168,85,247,0.08)] bg-white/[0.02] hover:border-cyan-400/30 hover:shadow-[0_0_30px_rgba(0,255,255,0.08)] transition-all duration-500"
+                onClick={() => {
+                  setFlippedHeadliner(dj.name)
+
+                  setTimeout(() => {
+                    setFlippedHeadliner(null)
+                  }, 6000)
+                }}
+                className="group relative aspect-[4/4.5] overflow-hidden rounded-2xl border
+border-cyan-400/25
+shadow-[0_0_25px_rgba(0,255,255,0.08)]
+bg-white/[0.02]
+hover:border-[#4f35bf]
+hover:shadow-[0_0_30px_rgba(168,85,247,0.10)]
+transition-all duration-500"
               >
-                <img
-                  src={dj.img}
-                  alt={dj.name}
-                  loading="lazy"
-                  width={768}
-                  height={768}
-                  className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
-                  <h3 className="font-display text-2xl md:text-3xl text-white tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">
-                    {dj.name}
-                  </h3>
-                  <p className="mt-1 text-xs tracking-[0.2em] text-cyan-300/75 font-display">
-                    {dj.style}
-                  </p>
-                </div>
-                <div className="absolute top-3 left-3 px-2 py-1 rounded bg-[var(--cyan)]/90 text-primary-foreground text-[10px] font-display tracking-[0.2em]">
-                  HEADLINER
+                <div className="relative w-full h-full">
+                  <div
+                    className={`absolute inset-0 transition-all duration-700 ${flippedHeadliner === dj.name
+                      ? "opacity-0 rotate-y-180"
+                      : "opacity-100"
+                      }`}
+                  >
+                    <img
+                      src={dj.img}
+                      alt={dj.name}
+                      loading="lazy"
+                      width={768}
+                      height={768}
+                      className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
+                      <h3 className="font-display text-2xl md:text-3xl text-white tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">
+                        {dj.name}
+                      </h3>
+                      <p className="mt-1 text-xs tracking-[0.2em] text-cyan-300/75 font-display">
+                        {dj.style}
+                      </p>
+                    </div>
+                    <div className="absolute top-3 left-3 px-2 py-1 rounded bg-[var(--cyan)]/90 text-primary-foreground text-[10px] font-display tracking-[0.2em]">
+                      HEADLINER
+                    </div>
+                  </div>
+                  <div
+                    className={`absolute inset-0 flex flex-col justify-center p-8 text-center bg-gradient-to-br from-[#060611] to-[#0b0b18] transition-all duration-700 ${flippedHeadliner === dj.name
+                      ? "opacity-100"
+                      : "opacity-0 pointer-events-none"
+                      }`}
+                  >
+                    <h3 className="font-display text-2xl text-white mb-4">
+                      {dj.name}
+                    </h3>
+
+                    <p className="text-sm leading-relaxed text-white/75">
+                      {dj.bio}
+                    </p>
+                  </div>
                 </div>
               </article>
             ))}
@@ -571,13 +607,25 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
               </div>
             ))}
           </div>
-
+          {SUPPORT.length > 8 && (
+            <div className="mt-8 md:hidden">
+              <button
+                type="button"
+                onClick={() => setShowAllSupport((prev) => !prev)}
+                className="w-full rounded-xl border border-cyan-400/40 px-7 py-4 font-display text-xs tracking-[0.25em] text-cyan-300/80 transition-all duration-300 hover:border-[#4f35bf] hover:bg-[#4f35bf]/15 hover:text-white"
+              >
+                {showAllSupport ? "SHOW LESS" : `+ ${SUPPORT.length - 8} MORE ARTISTS`}
+              </button>
+            </div>
+          )}
           {/* DESKTOP SUPPORT CARDS */}
           <div className="hidden md:grid mt-6 grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-5">
             {visibleSupport.map((dj, index) => (
               <article
                 key={`${dj.name}-${index}`}
-                className="group relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] hover:border-cyan-400/25 hover:shadow-[0_0_22px_rgba(0,255,255,0.06)] transition-all duration-500"
+                className="group relative aspect-square overflow-hidden rounded-xl border
+border-cyan-400/25 bg-white/[0.02]
+transition-all duration-500"
               >
                 <img
                   src={dj.img}
@@ -585,35 +633,34 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
                   loading="lazy"
                   width={400}
                   height={400}
-                  className="absolute inset-0 w-full h-full object-cover opacity-75 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
+                  className="absolute inset-0 w-full h-full object-cover opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-4">
                   <h4 className="font-display text-base text-foreground">
                     {dj.name}
                   </h4>
-                  <p className="text-[10px] tracking-[0.2em] text-[var(--cyan)] font-display">
+                  <p className="text-[10px] tracking-[0.2em] text-cyan-300/75 font-display">
                     {dj.style}
                   </p>
                 </div>
               </article>
             ))}
-            {SUPPORT.length > 12 && (
+            {hiddenSupportCount > 0 && (
               <div className="col-span-full mt-8 flex justify-center">
                 <button
                   type="button"
                   onClick={() => setShowAllSupport((prev) => !prev)}
                   className={`
-        rounded-xl border px-7 py-3 font-display text-xs tracking-[0.25em]
-        transition-all duration-300
-        ${
-  showAllSupport
-    ? "border-[#4f35bf] bg-[#4f35bf]/20 text-white shadow-[0_0_18px_rgba(79,53,191,0.25)]"
-    : "border-cyan-400/40 text-cyan-300/80 hover:border-[#4f35bf] hover:bg-[#4f35bf]/15 hover:text-white hover:shadow-[0_0_18px_rgba(79,53,191,0.20)]"
-}
+  rounded-xl border px-7 py-4 font-display text-xs tracking-[0.25em]
+  transition-all duration-300
+  ${showAllSupport
+                      ? "border-[#4f35bf] bg-[#4f35bf]/20 text-white shadow-[0_0_18px_rgba(79,53,191,0.25)]"
+                      : "border-cyan-400/40 text-cyan-300/80 hover:border-[#4f35bf] hover:bg-[#4f35bf]/15 hover:text-white hover:shadow-[0_0_18px_rgba(79,53,191,0.20)]"
+                    }
 `}
                 >
-                  {showAllSupport ? "SHOW LESS" : `+${hiddenSupportCount} MORE ARTISTS`}
+                  {showAllSupport ? "SKRÝT" : `+${hiddenSupportCount} DALŠÍCH DJs`}
                 </button>
               </div>
             )}
@@ -676,7 +723,11 @@ items-center justify-center text-[var(--cyan)] transition">
                     href="https://www.google.com/maps/place/49%C2%B035'41.2%22N+17%C2%B007'17.4%22E/@49.5947666,17.1208207,153m/data=!3m1!1e3!4m13!1m8!3m7!1s0x47124515a86ccca3:0x105f269da1c03cd!2zVMSbxaFldGljZSwgNzgzIDQ2IFTEm8WhZXRpY2U!3b1!8m2!3d49.5931724!4d17.1260751!16s%2Fm%2F06zk_qd!3m3!8m2!3d49.5947778!4d17.1215?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-3 mx-auto flex w-fit items-center gap-1.5 rounded-md border border-[#4f35bf]/20 px-3 py-1.5 text-[10px] tracking-[0.16em] text-white/70 hover:border-[#4f35bf] hover:text-white transition-all duration-300"
+                    className="mt-3 mx-auto flex w-fit items-center gap-1.5 rounded-md border-2
+border-[#4f35bf]/60 px-3 py-1.5 text-[10px] tracking-[0.16em] text-white/90
+hover:border-[#4f35bf] hover:bg-[#4f35bf]/10 hover:text-white
+shadow-[0_0_12px_rgba(79,53,191,0.15)]
+transition-all duration-300"
                   >
                     <MapPin className="w-4 h-4" />
                     NAVIGOVAT
@@ -792,7 +843,7 @@ items-center justify-center text-[var(--cyan)] transition">
 
           <a
             href="#"
-            className="mt-10 inline-flex items-center gap-3 px-10 py-5 rounded-md bg-[#14bccd]
+            className="mt-10 inline-flex items-center gap-3 px-10 py-5 rounded-md bg-[#1AC7D4]
 text-primary-foreground font-display tracking-[0.25em] text-base glow-cyan
 hover:bg-[#4f35bf] hover:text-white
 hover:shadow-[0_0_28px_rgba(79,53,191,0.35)]
