@@ -232,14 +232,36 @@
 }
 
 .animate-beam-cyan {
-  animation: beamCyan 12s ease-in-out infinite;
+  animation: beamCyan 6s ease-in-out infinite;
 }
 
 .animate-beam-purple {
-  animation: beamPurple 16s ease-in-out infinite;
+  animation: beamPurple 8s ease-in-out infinite;
 }
 
 .animate-beam-soft {
-  animation: beamSoft 10s ease-in-out infinite;
+  animation: beamSoft 5s ease-in-out infinite;
+}
+
+@keyframes mainLaserCyan {
+  0%, 100% {
+    transform: rotate(-22deg) translateX(-60px);
+    opacity: 0.12;
+  }
+  50% {
+    transform: rotate(-21deg) translateX(60px);
+    opacity: 0.24;
+  }
+}
+
+@keyframes mainLaserPurple {
+  0%, 100% {
+    transform: rotate(-18deg) translateX(-60px);
+    opacity: 0.12;
+  }
+  50% {
+    transform: rotate(-19deg) translateX(60px);
+    opacity: 0.24;
+  }
 }
 }

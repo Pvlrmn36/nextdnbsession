@@ -10,11 +10,9 @@ import {
 import logo from "@/assets/Logo NxtDNB.png";
 import logoneuroporn from "@/assets/Neuroporn.png";
 import hero from "@/assets/backgroundhero.png";
-import dj1 from "@/assets/TR TACTICS.png";
-import dj2 from "@/assets/SYMPLEX.png";
-import dj3 from "@/assets/DR.AX.png";
-import dj4 from "@/assets/drawback.png";
-import gallery1 from "@/assets/gallery1.jpg";
+import dj1 from "@/assets/SYMPLEX x TR TACTICS.png";
+import dj2 from "@/assets/DRAX x TYBERUS x XENYH.png";
+import gallery1 from "@/assets/pořadatelé NxtDNB.jpg";
 import gallery2 from "@/assets/gallery2.jpg";
 import gallery3 from "@/assets/gallery3.jpg";
 import gallery4 from "@/assets/gallery4.jpg";
@@ -35,69 +33,77 @@ const NAV = [
 ];
 
 const HEADLINERS = [
-  { name: "TR TACTICS", style: "EATBRAIN/BLACKOUT", img: dj1, bio: "Je rakouský producent a DJ, který se řadí mezi špičku evropského neurofunku. Jeho charakteristický zvuk stojí na masivních basových linkách, strojově přesných beatech a technicky propracovaných setech, které posouvají zážitek na maximum." },
-  { name: "SYMPLEX", style: "HOOFBEATS", img: dj2, bio: "Patří mezi nejvýraznější jména české DNB scény. Jeho sety spojují roky zkušeností, nevyčerpatelnou energii a špičkový neurofunk. Na pódiu vytváří atmosféru, která zaručeně roztančí všechny milovníky tvrdých bas a moderního DNB." },
-  { name: "DR.AX", style: "DARKSHIRE", img: dj3, bio: "Přináší energické neurofunk sety plné rychlých mixů, temné atmosféry a neúprosného tempa. Jeho pečlivě vybraný výběr tracků a cit pro gradaci vytváří intenzivní zážitek od prvního do posledního dropu." },
+  {
+    name: "SYMPLEX × TR TACTICS",
+    style: "HOOFBEATS × EATBRAIN / BLACKOUT",
+    img: dj1,
+    bio: "Speciální společný set dvou výrazných jmen evropské DNB scény. SYMPLEX přináší energii českého neurofunku a zkušenosti z velkých pódií, TR TACTICS přidává rakouskou preciznost, masivní basy a technicky propracovaný zvuk. Spojení, které bude patřit mezi nejsilnější momenty noci.",
+  },
+  {
+    name: "DR.AX × TYBERUS & XENYH",
+    style: "DARKSHIRE / NEUROFUNK",
+    img: dj2,
+    bio: "Trojice DJs, která společně doručí tvrdý, temný a energický neurofunk set. Rychlé mixy, neúprosné tempo, temná atmosféra a výběr tracků postavený tak, aby gradoval od začátku až do konce.",
+  },
 ];
 
 const SUPPORT = [
-  { name: "TYBERUS", style: "NEUROFUNK", img: dj1 },
-  { name: "XENYH", style: "ROLLERS", img: dj1 },
-  { name: "AUDIO ASSAULT", style: "MC", img: dj4 },
-  { name: "DOGMA", style: "MC", img: dj4 },
-  { name: "SHOGUN TACTIC", style: "MC", img: dj4 },
-  { name: "AWOKEN", style: "DEEP", img: dj4 },
-  { name: "MIRO", style: "NEURO", img: dj1 },
-  { name: "NASAY", style: "ROLLERS", img: dj2 },
-  { name: "TOTO", style: "DEEP", img: dj3 },
-  { name: "ILL-FATED", style: "HARDCORE", img: dj4 },
-  { name: "M.G.", style: "NEURO", img: dj1 },
-  { name: "L-ORI", style: "DEEP", img: dj2 },
-  { name: "ILLSICK", style: "MC", img: dj4 },
-  { name: "SHILLET", style: "MC", img: dj4 },
-  { name: "ONEBLOOD", style: "MC", img: dj4 },
-  { name: "POLIPHONIC", style: "MC", img: dj4 },
-  { name: "ADYX", style: "MC", img: dj4 },
-  { name: "WATERONE", style: "MC", img: dj4 },
-  { name: "SPOONER", style: "MC", img: dj4 },
-  { name: "DRAWBACK", style: "MC", img: dj4 },
-  { name: "BABS", style: "MC", img: dj4 },
-  { name: "TOBI", style: "MC", img: dj4 },
-  { name: "JORIS", style: "MC", img: dj4 },
+  { name: "AUDIO ASSAULT", style: "MC"},
+  { name: "DOGMA", style: "MC"},
+  { name: "SHOGUN TACTIC", style: "MC"},
+  { name: "AWOKEN", style: "DEEP"},
+  { name: "MIRO", style: "NEURO", },
+  { name: "NASAY", style: "ROLLERS" },
+  { name: "TOTO", style: "DEEP"},
+  { name: "ILL-FATED", style: "HARDCORE"},
+  { name: "M.G.", style: "NEURO"},
+  { name: "L-ORI", style: "DEEP"},
+  { name: "ILLSICK", style: "MC"},
+  { name: "SHILLET", style: "MC",},
+  { name: "ONEBLOOD", style: "MC",},
+  { name: "POLIPHONIC", style: "MC"},
+  { name: "ADYX", style: "MC" },
+  { name: "WATERONE", style: "MC", },
+  { name: "SPOONER", style: "MC", },
+  { name: "DRAWBACK", style: "ROLLERS", },
+  { name: "BABS", style: "MC", },
+  { name: "TOBI", style: "MC", },
+  { name: "JORIS", style: "MC", },
+  { name: "COOLMEAN", style: "MC" },
 ];
 
 const TIMETABLE = [
   ["17:00", "OPEN SLOT"],
-  ["18:00", "TOBI b2b JORIS"],
+  ["18:00", "COOLMEAN × JORIS"],
   ["19:00", "DRAWBACK"],
-  ["20:00", "WATERONE b2b SPOONER"],
-  ["21:00", "ONEBLOOD b2b POLIPHONIC b2b ADYX"],
-  ["21:45", "ILLSICK B2B SHILLET"],
-  ["22:30", "L-ORI & BABS"],
-  ["23:15", "ILL-FATED B2B M.G."],
-  ["00:00", "SYMPLEX B2B TR TACTICS"],
-  ["01:00", "XENYH & TYBERUS B2B DR.AX"],
-  ["02:00", "AUDIO ASSAULT B2B DOGMA  B2B SHOGUN TACTIC"],
-  ["03:00", "AWOKEN B2B MIRO"],
-  ["04:00", "NASAY B2B TOTO"],
+  ["20:00", "WATERONE & SPOONER"],
+  ["21:00", "ONEBLOOD × POLIPHONIC × ADYX"],
+  ["21:45", "ILL;S1CK"],
+  ["22:30", "ILL-FATED × M.G."],
+  ["23:15", "L-ORI × BABS"],
+  ["00:00", "TR TACTICS × SYMPLEX"],
+  ["01:00", "DR.AX × XENYH & TYBERUS"],
+  ["02:00", "AUDIO ASSAULT × DOGMA × SHOGUN TACTICS"],
+  ["03:00", "AWOKEN × MIRO"],
+  ["04:00", "NASAY × TOTO"],
   ["04:45", "THE END"],
 ];
 
 const INFO = [
   { icon: MapPin, title: "LOKACE", text: "Těšetice u Olomouce • areál hřiště" },
-  { icon: ParkingCircle, title: "PARKOVÁNÍ", text: "Omezená kapacita • doporučujeme spolujízdu" },
+  { icon: ParkingCircle, title: "PARKOVÁNÍ", text: "Omezená kapacita parkoviště\nDoporučujeme spolujízdu" },
 
-  { icon: Banknote, title: "PLATBA", text: "Vstup hotově • bar hotově / QR platby" },
+  { icon: Banknote, title: "PLATBA", text: "Vstup pouze hotově\nBar hotově i QR platby" },
   { icon: Beer, title: "BAR", text: "Pivo • drinky • nealko\nOtevřený po celou noc" },
-  { icon: HeartHandshake, title: "RESPEKT", text: "Respekt k lidem, hudbě i místu\nŽádná tolerance pro konflikty" },
-  { icon: Trees, title: "OPEN AIR", text: "DNB pod širým nebem\nStage u hřiště • rave atmosféra" },
+  { icon: HeartHandshake, title: "RESPEKT", text: "Respekt k lidem, hudbě i místu\nBez konfliktů a problémů" },
+  { icon: Trees, title: "OPEN AIR", text: "Hudba pod širým nebem\nLasery • kouř • rave atmosféra" },
 ];
 
 const FAQ = [
   { q: "KDE SE AKCE KONÁ?", a: "Akce se koná v Těšeticích u Olomouce u fotbalového hřiště. Přesnou trasu a mapu najdeš v sekci INFO ." },
   { q: "JAK JE TO S PARKOVÁNÍM?", a: "Kapacita parkování je omezená. Doporučujeme přijet společně autem nebo využít spolujízdu." },
   { q: "JAK U NÁS ZAPLATÍŠ?", a: "Vstup na místě pouze hotově. Bar přijímá hotovost i QR platby." },
-  { q: "JE MOŽNÉ PŘESPAT?", a: "Oficiální camp není k dispozici. Mysli na bezpečný odvoz domů." },
+  { q: "MŮŽU PŘIJÍT POZDĚJI??", a: "Ano. Dorazit můžeš kdykoliv během akce." },
   { q: "CO NA MÍSTĚ NAJDU?", a: "Kvalitní sound a lidi, kteří jedou DNB naplno až do rána." },
 ];
 const EVENT_DATE = new Date("2026-06-06T17:00:00");
@@ -211,12 +217,12 @@ function Index() {
           : "bg-gradient-to-b from-background/60 to-transparent"
           }`}
       >
-        <div className="mx-auto max-w-7xl px-4 lg:px-10 h-11 md:h-14 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 lg:px-10 h-14 flex items-center justify-between">
           <button onClick={() => go("hero")} className="flex items-center group">
             <img
               src={logo}
               alt="NEXT DNB SESSION"
-              className="h-8 sm:h-10 md:h-16 w-auto max-w-[180px] sm:max-w-none object-contain bg-transparent opacity-95 group-hover:opacity-100 transition drop-shadow-[0_0_14px_oklch(0.85_0.18_190/0.5)]"
+              className="h-8 sm:h-10 md:h-14 w-auto max-w-[180px] sm:max-w-none object-contain bg-transparent opacity-95 group-hover:opacity-100 transition"
             />
           </button>
 
@@ -236,7 +242,7 @@ function Index() {
 
             <button
               onClick={() => go("vstupenky")}
-              className={`px-5 py-2 rounded-md text-primary-foreground font-display tracking-[0.25em] text-[11px] glow-cyan transition ${activeSection === "vstupenky"
+              className={`px-5 py-2 rounded-md text-primary-foreground font-display tracking-[0.25em] text-[11px] transition ${activeSection === "vstupenky"
                 ? "bg-[#4f35bf] text-white"
                 : "bg-[#1AC7D4] hover:bg-[#4f35bf] hover:text-white hover:brightness-110"
                 }`}
@@ -246,11 +252,11 @@ function Index() {
           </nav>
 
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground p-1"
             onClick={() => setOpen(!open)}
             aria-label="Menu"
           >
-            {open ? <X size={26} /> : <Menu size={26} />}
+            {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
@@ -301,6 +307,9 @@ function Index() {
           width={1920}
           height={1080}
         />
+        <div className="absolute inset-0 pointer-events-none z-[2] overflow-hidden">
+  <div className="laser-sweep" />
+</div>
 
         {/* Cinematic dark overlays — vignette + bottom fade for contrast */}
         <div className="absolute inset-0 bg-background/25" />
@@ -323,21 +332,7 @@ function Index() {
         {/* Subtle color bleed from lasers */}
         <div className="hidden md:block absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-[var(--cyan)] opacity-[0.10] blur-[140px]" />
         <div className="hidden md:block absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-[var(--violet)] opacity-[0.10] blur-[140px]" />
-        {/* Animated light beams */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[2]">
-          <div className="hidden md:block absolute left-[-10%] top-[20%] w-[70%] h-[2px]
-  bg-cyan-300/55 blur-sm rotate-[12deg]
-  animate-beam-cyan" />
-
-          <div className="md:block absolute right-[-10%] top-[35%] w-[60%] h-[2px]
-  bg-purple-400/55 blur-sm rotate-[-10deg]
-  animate-beam-purple" />
-
-          <div className="md:block absolute left-[20%] bottom-[25%] w-[50%] h-[1px]
-  bg-cyan-200/20 blur-sm rotate-[8deg]
-  animate-beam-soft" />
-        </div>
-
+        
         {/* Centered cinematic composition */}
         <div className="relative z-10 mx-auto w-full max-w-5xl px-5 lg:px-10 pt-24 pb-20 flex flex-col items-center text-center">
           {/* Top tagline */}
@@ -370,10 +365,12 @@ function Index() {
     animate-float
     duration-300
     will-change-transform
-    w-[240px]
-    sm:w-[280px]
-    md:w-[340px]
-    lg:w-[380px]
+    mt-6 md:mt-8
+    mb-3 md:mb-4
+    w-[220px]
+    sm:w-[260px]
+    md:w-[320px]
+    lg:w-[360px]
   "
           />
           {/* Tagline under headline */}
@@ -384,11 +381,11 @@ function Index() {
             {" · "}
             <span className="text-[#6a4cff]">NEURO</span>
             {" · "}
-            <span className="text-[#6a4cff]">CROSSBREED</span>
+            <span className="text-[#6a4cff]">HARD DNB</span>
           </p>
           {/* COUNTDOWN */}
 
-          <div className="mt-5 flex items-center justify-center gap-4 md:gap-6 text-center">
+          <div className="mt-8 flex items-center justify-center gap-4 md:gap-6 text-center">
 
             <div className="w-[52px]">
               <div className="text-3xl md:text-3xl font-display text-white/90 tracking-[0.12em]">
@@ -426,19 +423,19 @@ function Index() {
           <div className="mt-8 h-px w-40 bg-gradient-to-r from-transparent via-[var(--cyan)] to-transparent" />
 
           {/* Event meta */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
             <div className="flex items-center gap-2 text-foreground/90">
               <Calendar size={18} className="text-[var(--cyan)]" />
-              <span className="tracking-[0.25em] font-display text-sm">06 / 06 / 2026</span>
+              <span className="tracking-[0.2em] font-display text-sm">06 / 06 / 2026</span>
             </div>
             <div className="hidden md:block w-px h-4 bg-border" />
             <div className="flex items-center gap-2 text-foreground/90">
               <MapPin size={18} className="text-[var(--cyan)]" />
               <a
-                href="https://www.google.com/maps/place/49%C2%B035'41.2%22N+17%C2%B007'17.4%22E/@49.5947804,17.1030331,2057m/data=!3m2!1e3!4b1!4m13!1m8!3m7!1s0x47124515a86ccca3:0x105f269da1c03cd!2zVMSbxaFldGljZSwgNzgzIDQ2IFTEm8WhZXRpY2U!3b1!8m2!3d49.5931724!4d17.1260751!16s%2Fm%2F06zk_qd!3m3!8m2!3d49.594768!4d17.121487?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D"
+                href="https://www.google.com/maps/place/T%C4%9B%C5%A1etice+175,+783+46+T%C4%9B%C5%A1etice/@49.5949735,17.1176936,514m/data=!3m1!1e3!4m6!3m5!1s0x471245112c9ea357:0x203486ef4f5c77c!8m2!3d49.5948664!4d17.1215685!16s%2Fg%2F11c4l_rh_k?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="tracking-[0.25em] font-display text-sm hover:text-cyan-300 transition"
+                className="tracking-[0.2em] font-display text-sm hover:text-cyan-300 transition"
               >
                 Těšetice u Olomouce
               </a>
@@ -446,22 +443,27 @@ function Index() {
             <div className="hidden md:block w-px h-4 bg-border" />
             <div className="flex items-center gap-2 text-foreground/90">
               <Ticket size={18} className="text-[var(--cyan)]" />
-              <span className="tracking-[0.25em] font-display text-sm">17:00 — 04:45</span>
+              <span className="tracking-[0.2em] font-display text-sm">17:00 — 04:45</span>
             </div>
           </div>
 
           {/* CTAs */}
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <button
-              onClick={() => go("vstupenky")}
+              onClick={() =>
+  window.open(
+    "https://www.smsticket.cz/vstupenky/70162-next-d-n-b-session-w-tr-tactics-b2b-symplex-fotbalove-hriste-tesetice",
+    "_blank"
+  )
+}
               className="px-8 py-3.5 rounded-md bg-[#1AC7D4] text-primary-foreground font-display tracking-[0.3em] text-[13px] hover:bg-[#4f35bf] hover:text-white
 hover:shadow-[0_0_28px_rgba(79,53,191,0.35)]"
             >
-              KOUPIT VSTUPENKY
+              KOUPIT V PŘEDPRODEJI
             </button>
             <button
               onClick={() => go("lineup")}
-              className="px-8 py-4 rounded-md border border-[#1AC7D4] text-foreground font-display tracking-[0.3em] text-sm shadow-[0_0_24px_oklch(0.85_0.18_190/0.2)] hover:bg-[#4f35bf]/15
+              className="px-10 py-5 rounded-md border border-[#1AC7D4] text-foreground font-display tracking-[0.3em] text-sm shadow-[0_0_24px_oklch(0.85_0.18_190/0.2)] hover:bg-[#4f35bf]/15
 hover:border-[#4f35bf]
 hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
             >
@@ -471,19 +473,13 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
         </div>
 
         {/* Bottom edge fade into next section */}
-        <div className="absolute bottom-0 inset-x-0 h-56 bg-gradient-to-b from-transparent via-background/70 to-background z-[3]" />
-
-        {/* Scroll cue */}
-        <div className="absolute bottom-[-12px] left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-90">
-          <span className="text-[10px] tracking-[0.4em] font-display text-cyan-300/70">
-            SCROLL
-          </span>
-          <div className="w-px h-10 bg-gradient-to-b from-[var(--cyan)] to-transparent animate-pulse" />
-        </div>
+        <div className="absolute bottom-0 inset-x-0 h-96 bg-gradient-to-b from-transparent via-background/50 via-60% to-background z-[3]" />
       </section>
+      <div className="mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/15 to-transparent" />
 
       {/* O AKCI */}
-      <section id="o-akci" className="relative pt-20 pb-14 md:pt-28 md:pb-24">
+      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent mb-16" />
+      <section id="o-akci" className="relative pt-20 pb-24 md:pt-20 md:pb-32">
         <div className="mx-auto max-w-5xl px-5 lg:px-10">
           <h2 className="section-title font-display text-3xl md:text-5xl text-foreground">
             O AKCI
@@ -500,7 +496,7 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
           </div>
         </div>
       </section>
-      <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14">
+      <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14 animate-pulse">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
         <div className="absolute inset-0 blur-sm bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent" />
       </div>
@@ -508,7 +504,7 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
       {/* LINEUP */}
       <section
         id="lineup"
-        className="relative pt-6 pb-24 md:pt-16 md:pb-32"
+        className="relative pt-12 pb-20 md:pt-16 md:pb-32"
       >
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <h2 className="section-title font-display text-3xl md:text-5xl text-foreground">
@@ -519,7 +515,7 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
             HEADLINERS
           </p>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 max-w-7xl mx-auto">
             {HEADLINERS.map((dj, index) => (
               <article
                 key={`${dj.name}-${index}`}
@@ -585,8 +581,8 @@ transition-all duration-500"
             ))}
           </div>
 
-          <p className="mt-16 text-sm tracking-[0.25em] text-white/55 font-display">
-            SUPPORT
+          <p className="mt-12 text-sm tracking-[0.25em] text-white/55 font-display">
+            SUPPORT DJ<small className="text-[0.8em] normal-case">s</small>
           </p>
 
           <div className="hidden md:block pointer-events-none absolute left-1/2 -translate-x-1/2 mt-10 w-[420px] h-[420px] rounded-full bg-cyan-500/5 blur-[120px]" />
@@ -612,39 +608,36 @@ transition-all duration-500"
               <button
                 type="button"
                 onClick={() => setShowAllSupport((prev) => !prev)}
-                className="w-full rounded-xl border border-cyan-400/40 px-7 py-4 font-display text-xs tracking-[0.25em] text-cyan-300/80 transition-all duration-300 hover:border-[#4f35bf] hover:bg-[#4f35bf]/15 hover:text-white"
+                className="w-full rounded-xl border border-cyan-400/40 px-7 py-3 font-display text-xs tracking-[0.25em] text-cyan-300/80 transition-all duration-300 hover:border-[#4f35bf] hover:bg-[#4f35bf]/15 hover:text-white"
               >
-                {showAllSupport ? "SHOW LESS" : `+ ${SUPPORT.length - 8} MORE ARTISTS`}
-              </button>
-            </div>
+                {showAllSupport ? "SKRÝT" : `+ ${SUPPORT.length - 8} DALŠÍCH DJs`}
+                </button>
+          </div>
           )}
           {/* DESKTOP SUPPORT CARDS */}
           <div className="hidden md:grid mt-6 grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-5">
             {visibleSupport.map((dj, index) => (
               <article
-                key={`${dj.name}-${index}`}
-                className="group relative aspect-square overflow-hidden rounded-xl border
-border-cyan-400/25 bg-white/[0.02]
-transition-all duration-500"
-              >
-                <img
-                  src={dj.img}
-                  alt={dj.name}
-                  loading="lazy"
-                  width={400}
-                  height={400}
-                  className="absolute inset-0 w-full h-full object-cover opacity-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-4">
-                  <h4 className="font-display text-base text-foreground">
-                    {dj.name}
-                  </h4>
-                  <p className="text-[10px] tracking-[0.2em] text-cyan-300/75 font-display">
-                    {dj.style}
-                  </p>
-                </div>
-              </article>
+  key={`${dj.name}-${index}`}
+  className="relative rounded-xl border border-cyan-400/15 bg-white/[0.025] p-6 min-h-[120px] flex flex-col justify-center overflow-hidden"
+>
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(79,53,191,0.22),transparent_45%)]" />
+
+  <div className="relative z-10">
+    <h4 className="font-display text-1xl text-white tracking-wide">
+      {dj.name}
+    </h4>
+
+    <p className="mt-2 text-xs tracking-[0.25em] text-cyan-300/75 font-display">
+      {dj.style}
+    </p>
+
+    <div
+  className="mt-4 h-[2px] w-16 rounded-full"
+  style={{ background: "var(--gradient-logo)" }}
+/>
+  </div>
+</article>
             ))}
             {hiddenSupportCount > 0 && (
               <div className="col-span-full mt-8 flex justify-center">
@@ -652,7 +645,7 @@ transition-all duration-500"
                   type="button"
                   onClick={() => setShowAllSupport((prev) => !prev)}
                   className={`
-  rounded-xl border px-7 py-4 font-display text-xs tracking-[0.25em]
+  rounded-xl border px-12 py-5 font-display text-sm tracking-[0.25em]
   transition-all duration-300
   ${showAllSupport
                       ? "border-[#4f35bf] bg-[#4f35bf]/20 text-white shadow-[0_0_18px_rgba(79,53,191,0.25)]"
@@ -667,14 +660,18 @@ transition-all duration-500"
           </div>
         </div>
       </section>
+      <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14 animate-pulse">
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
+  <div className="absolute inset-0 blur-sm bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent" />
+</div>
 
       {/* TIMETABLE */}
-      <div className="mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
+      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
 
       <div className="hidden md:block pointer-events-none absolute left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-cyan-500/5 blur-[140px]" />
       <section
         id="timetable"
-        className="relative pt-6 pb-24 md:pt-10 md:pb-32"
+        className="relative pt-12 pb-24 md:pt-16 md:pb-32"
       >
         <div className="mx-auto max-w-3xl px-5 lg:px-10">
           <h2 className="section-title font-display text-3xl md:text-5xl">TIMETABLE</h2>
@@ -697,9 +694,14 @@ transition-all duration-500"
           </div>
         </div>
       </section>
+      <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14 animate-pulse">
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
+  <div className="absolute inset-0 blur-sm bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent" />
+</div>
 
       {/* INFO */}
-      <section id="info" className="relative py-24 md:py-32 border-t border-border/40">
+      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
+      <section id="info"className="pt-12 pb-24 md:pt-16 md:pb-32">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <h2 className="section-title font-display text-3xl md:text-5xl">INFO</h2>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -720,12 +722,12 @@ items-center justify-center text-[var(--cyan)] transition">
                 </p>
                 {title === "LOKACE" && (
                   <a
-                    href="https://www.google.com/maps/place/49%C2%B035'41.2%22N+17%C2%B007'17.4%22E/@49.5947666,17.1208207,153m/data=!3m1!1e3!4m13!1m8!3m7!1s0x47124515a86ccca3:0x105f269da1c03cd!2zVMSbxaFldGljZSwgNzgzIDQ2IFTEm8WhZXRpY2U!3b1!8m2!3d49.5931724!4d17.1260751!16s%2Fm%2F06zk_qd!3m3!8m2!3d49.5947778!4d17.1215?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D"
+                    href="https://www.google.com/maps/place/T%C4%9B%C5%A1etice+175,+783+46+T%C4%9B%C5%A1etice/@49.5949735,17.1176936,514m/data=!3m1!1e3!4m6!3m5!1s0x471245112c9ea357:0x203486ef4f5c77c!8m2!3d49.5948664!4d17.1215685!16s%2Fg%2F11c4l_rh_k?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-3 mx-auto flex w-fit items-center gap-1.5 rounded-md border-2
-border-[#4f35bf]/60 px-3 py-1.5 text-[10px] tracking-[0.16em] text-white/90
-hover:border-[#4f35bf] hover:bg-[#4f35bf]/10 hover:text-white
+                    className="mt-3 mx-auto flex w-fit items-center gap-1.5 rounded-md border-1
+border-cyan-400/40 px-3 py-1.5 text-[11px] tracking-[0.16em] text-cyan-300
+hover:border-[#4f35bf] hover:bg-[#4f35bf]/15 hover:text-white
 shadow-[0_0_12px_rgba(79,53,191,0.15)]
 transition-all duration-300"
                   >
@@ -738,9 +740,14 @@ transition-all duration-300"
           </div>
         </div>
       </section>
+      <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14 animate-pulse">
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
+  <div className="absolute inset-0 blur-sm bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent" />
+</div>
 
       {/* GALLERY */}
-      <section id="galerie" className="relative py-24 md:py-32 border-t border-border/40">
+      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
+      <section id="galerie" className="relative pt-6 pb-24 md:pt-10 md:pb-32">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <h2 className="section-title font-display text-3xl md:text-5xl">GALERIE / AFTERMOVIE</h2>
           <p className="mt-4 max-w-xl text-muted-foreground">
@@ -770,9 +777,14 @@ transition-all duration-300"
           </div>
         </div>
       </section>
+      <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14 animate-pulse">
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
+  <div className="absolute inset-0 blur-sm bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent" />
+</div>
 
       {/* FAQ */}
-      <section id="faq" className="relative py-24 md:py-32 border-t border-border/40">
+      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
+      <section id="faq" className="relative pt-12 pb-24 md:pt-16 md:pb-32">
         <div className="mx-auto max-w-3xl px-5 lg:px-10">
           <h2 className="section-title font-display text-3xl md:text-5xl">FAQ</h2>
           <Accordion
@@ -784,7 +796,7 @@ transition-all duration-300"
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="rounded-2xl border border-border/60 bg-white/[0.02] px-6 transition-all duration-300 hover:border-[#4f35bf]/40"
+                className="rounded-2xl border border-cyan-400/15 bg-white/[0.02] px-6 transition-all duration-300 hover:border-[#4f35bf]/40 bg-[#4f35bf]/5"
               >
                 <AccordionTrigger className="font-display text-lg tracking-[0.18em] text-foreground hover:text-[#4f35bf] hover:no-underline text-left py-6 transition-colors duration-300">
                   {item.q}
@@ -797,24 +809,24 @@ transition-all duration-300"
           </Accordion>
         </div>
       </section>
+      <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14 animate-pulse">
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
+  <div className="absolute inset-0 blur-sm bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent" />
+</div>
 
       {/* TICKETS CTA */}
-      <section id="vstupenky" className="relative py-24 md:py-36 border-t border-border/40 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <img src={gallery1} alt="" className="w-full h-full object-cover opacity-25" loading="lazy" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
-        </div>
-        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[var(--cyan)] opacity-10 blur-[160px]" />
+      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
+      <section id="vstupenky" className="relative pt-12 pb-24 md:pt-16 md:pb-32 overflow-hidden">
 
         <div className="relative mx-auto max-w-3xl px-5 lg:px-10 text-center">
           <p className="font-display tracking-[0.4em] text-sm text-[var(--cyan)]">
             VSTUPENKY
           </p>
-          <h2 className="mt-4 font-display text-4xl md:text-7xl text-foreground leading-none">
+          <h2 className="mt-4 font-display text-4xl md:text-6xl text-foreground leading-none">
             PŘEDPRODEJ A VSTUP NA MÍSTĚ
           </h2>
           <p className="mt-6 text-muted-foreground max-w-xl mx-auto">
-            Vstupenky můžeš koupit online v předprodeji nebo na místě při vstupu na akci.
+            Kup online v předprodeji, nebo zaplať hotově na místě.
           </p>
 
           <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
@@ -842,7 +854,9 @@ transition-all duration-300"
           </div>
 
           <a
-            href="#"
+  href="https://www.smsticket.cz/vstupenky/70162-next-d-n-b-session-w-tr-tactics-b2b-symplex-fotbalove-hriste-tesetice"
+  target="_blank"
+  rel="noopener noreferrer"
             className="mt-10 inline-flex items-center gap-3 px-10 py-5 rounded-md bg-[#1AC7D4]
 text-primary-foreground font-display tracking-[0.25em] text-base glow-cyan
 hover:bg-[#4f35bf] hover:text-white
@@ -856,7 +870,7 @@ transition"
       </section>
 
       {/* POWERED BY NEUROPORN */}
-      <div className="py-10 text-center border-t border-border/40">
+      <div className="pt-6 pb-24 text-center">
 
         <p className="text-xs tracking-[0.3em] text-muted-foreground">
           POWERED BY NEUROPORN
@@ -866,22 +880,27 @@ transition"
           href="https://www.instagram.com/neuropor.n/"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-block opacity-80 hover:opacity-100 hover:scale-[1.03] transition-all duration-300"
+          className="mt-8 inline-block opacity-80 hover:opacity-100 hover:scale-[1.03] hover:scale-[1.03] transition-all duration-300"
         >
           <img
             src={logoneuroporn}
             alt="NEUROPORN"
-            className="w-28 mx-auto opacity-70 hover:opacity-100 transition-opacity"
+            className="w-33 mx-auto opacity-70 hover:opacity-100 transition-opacity"
           />
         </a>
 
       </div>
+      <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14">
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
+  <div className="absolute inset-0 blur-sm bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent" />
+</div>
       {/* SOCIAL / FOOTER */}
-      <footer id="kontakt" className="relative py-10 border-t border-border/40">
+      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
+      <footer id="kontakt" className="relative pt-12 pb-10 md:pt-16 md:pb-12">
         <div className="mx-auto max-w-7xl px-5 lg:px-10 grid md:grid-cols-3 gap-10 items-center">
 
           <div>
-            <img src={logo} alt="NEXT DNB SESSION" className="h-12 w-auto" />
+            <img src={logo} alt="NEXT DNB SESSION" className="h-16 w-16" />
 
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               DNB OPEN AIR
@@ -900,21 +919,22 @@ transition"
 
             <div className="mt-4 flex justify-center gap-4">
               <a
-                href="https://instagram.com/nextdnbsession"
+                href="https://www.instagram.com/next_dnb_session/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="
       group
-      w-11 h-11 rounded-xl
-      border border-border
-      flex items-center justify-center
-      text-foreground/80
-      transition-all duration-300
-      hover:border-[#4f35bf]
-hover:text-[#4f35bf]
-hover:bg-transparent
-      hover:-translate-y-[2px]
+w-14 h-14 rounded-xl
+border border-cyan-400/40
+flex items-center justify-center
+text-cyan-300
+transition-all duration-300
+hover:border-[#4f35bf]
+hover:bg-[#4f35bf]/15
+hover:text-white
+hover:shadow-[0_0_18px_rgba(79,53,191,0.20)]
+hover:-translate-y-[2px]
     "
               >
                 <Instagram
@@ -930,15 +950,16 @@ hover:bg-transparent
                 aria-label="Facebook"
                 className="
       group
-      w-11 h-11 rounded-xl
-      border border-border
-      flex items-center justify-center
-      text-foreground/80
-      transition-all duration-300
-      hover:border-[#4f35bf]
-hover:text-[#4f35bf]
-hover:bg-transparent
-      hover:-translate-y-[2px]
+w-14 h-14 rounded-xl
+border border-cyan-400/40
+flex items-center justify-center
+text-cyan-300
+transition-all duration-300
+hover:border-[#4f35bf]
+hover:bg-[#4f35bf]/15
+hover:text-white
+hover:shadow-[0_0_18px_rgba(79,53,191,0.20)]
+hover:-translate-y-[2px]
     "
               >
                 <Facebook
@@ -958,7 +979,11 @@ hover:bg-transparent
             <p>info@nextdnbsession.cz</p>
 
             <p className="mt-2 text-xs tracking-widest">
-              NEXT DNB SESSION © 2026
+              © 2026 NEXT DNB SESSION
+
+              <p className="mt-2 text-xs tracking-widest">
+              All Rights Reserved
+            </p>
             </p>
           </div>
         </div>
