@@ -222,7 +222,7 @@ function Index() {
             <img
               src={logo}
               alt="NEXT DNB SESSION"
-              className="h-8 sm:h-10 md:h-14 w-auto max-w-[180px] sm:max-w-none object-contain bg-transparent opacity-95 group-hover:opacity-100 transition"
+              className="h-12 sm:h-10 md:h-14 w-auto object-contain bg-transparent opacity-95 group-hover:opacity-100 transition"
             />
           </button>
 
@@ -486,7 +486,7 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
           </h2>
           <div className="mt-10 grid md:grid-cols-2 gap-10 items-start">
             <p className="text-base md:text-lg leading-[1.9] text-white/70">
-              <span className="text-foreground font-semibold">NEXT DNB SESSION</span> je letní open air akce pro ty, kteří milují deep vibe, těžkou basu a noční atmosféru pod širým nebem. Místo, kde se každé léto potkávají milovníci DNB.
+              <span className="text-foreground font-semibold">NEXT DNB SESSION</span> je od roku 2018 letní open air akce pro ty, kteří milují deep vibe, těžkou basu a noční atmosféru pod širým nebem. Místo, kde se každé léto potkávají milovníci DNB.
 
             </p>
             <p className="text-base md:text-lg leading-[1.9] text-white/70">
@@ -524,7 +524,7 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
 
                   setTimeout(() => {
                     setFlippedHeadliner(null)
-                  }, 6000)
+                  }, 9000)
                 }}
                 className="group relative aspect-[4/4.5] overflow-hidden rounded-2xl border
 border-cyan-400/25
@@ -666,9 +666,7 @@ transition-all duration-500"
 </div>
 
       {/* TIMETABLE */}
-      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
-
-      <div className="hidden md:block pointer-events-none absolute left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-cyan-500/5 blur-[140px]" />
+<div className="hidden md:block pointer-events-none absolute left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-cyan-500/5 blur-[140px]" />
       <section
         id="timetable"
         className="relative pt-12 pb-24 md:pt-16 md:pb-32"
@@ -700,7 +698,6 @@ transition-all duration-500"
 </div>
 
       {/* INFO */}
-      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
       <section id="info"className="pt-12 pb-24 md:pt-16 md:pb-32">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <h2 className="section-title font-display text-3xl md:text-5xl">INFO</h2>
@@ -746,8 +743,7 @@ transition-all duration-300"
 </div>
 
       {/* GALLERY */}
-      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
-      <section id="galerie" className="relative pt-6 pb-24 md:pt-10 md:pb-32">
+      <section id="galerie" className="relative pt-12 pb-24 md:pt-16 md:pb-32">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <h2 className="section-title font-display text-3xl md:text-5xl">GALERIE / AFTERMOVIE</h2>
           <p className="mt-4 max-w-xl text-muted-foreground">
@@ -783,7 +779,6 @@ transition-all duration-300"
 </div>
 
       {/* FAQ */}
-      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
       <section id="faq" className="relative pt-12 pb-24 md:pt-16 md:pb-32">
         <div className="mx-auto max-w-3xl px-5 lg:px-10">
           <h2 className="section-title font-display text-3xl md:text-5xl">FAQ</h2>
@@ -815,7 +810,6 @@ transition-all duration-300"
 </div>
 
       {/* TICKETS CTA */}
-      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
       <section id="vstupenky" className="relative pt-12 pb-24 md:pt-16 md:pb-32 overflow-hidden">
 
         <div className="relative mx-auto max-w-3xl px-5 lg:px-10 text-center">
@@ -832,7 +826,7 @@ transition-all duration-300"
           <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
             {[
               { tier: "PŘEDPRODEJ", price: "430", note: "Online vstupenka" },
-              { tier: "NA MÍSTĚ", price: "450", note: "Hotově při vstupu" },
+              { tier: "NA MÍSTĚ", price: "480", note: "Hotově při vstupu" },
             ].map((t) => (
               <div
                 key={t.tier}
@@ -895,8 +889,7 @@ transition"
   <div className="absolute inset-0 blur-sm bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent" />
 </div>
       {/* SOCIAL / FOOTER */}
-      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-16" />
-      <footer id="kontakt" className="relative pt-12 pb-10 md:pt-16 md:pb-12">
+      <footer id="kontakt" className="relative pt-12 pb-24 md:pt-16 md:pb-32">
         <div className="mx-auto max-w-7xl px-5 lg:px-10 grid md:grid-cols-3 gap-10 items-center">
 
           <div>
