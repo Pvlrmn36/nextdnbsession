@@ -48,28 +48,10 @@ const HEADLINERS = [
 ];
 
 const SUPPORT = [
-  { name: "AUDIO ASSAULT", style: "MC"},
-  { name: "DOGMA", style: "MC"},
-  { name: "SHOGUN TACTIC", style: "MC"},
-  { name: "AWOKEN", style: "DEEP"},
-  { name: "MIRO", style: "NEURO", },
-  { name: "NASAY", style: "ROLLERS" },
-  { name: "TOTO", style: "DEEP"},
-  { name: "ILL-FATED", style: "HARDCORE"},
-  { name: "M.G.", style: "NEURO"},
-  { name: "L-ORI", style: "DEEP"},
-  { name: "ILLSICK", style: "MC"},
-  { name: "SHILLET", style: "MC",},
-  { name: "ONEBLOOD", style: "MC",},
-  { name: "POLIPHONIC", style: "MC"},
-  { name: "ADYX", style: "MC" },
-  { name: "WATERONE", style: "MC", },
-  { name: "SPOONER", style: "MC", },
-  { name: "DRAWBACK", style: "ROLLERS", },
-  { name: "BABS", style: "MC", },
-  { name: "TOBI", style: "MC", },
-  { name: "JORIS", style: "MC", },
-  { name: "COOLMEAN", style: "MC" },
+  { name: "BABS", style: "NEURO"},
+  { name: "DRAWBACK", style: "ROLLERS"},
+  { name: "L-ORI", style: "NEURO"},
+  { name: "ONEBLOOB", style: "NEURO"},
 ];
 
 const TIMETABLE = [
@@ -213,8 +195,8 @@ function Index() {
       {/* NAV */}
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled
-          ? "backdrop-blur-xl bg-background/80 border-b border-[#4f35bf]/30 shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
-          : "bg-gradient-to-b from-background/60 to-transparent"
+          ? "backdrop-blur-xl bg-background/55 border-b border-[#4f35bf]/30"
+          : "bg-gradient-to-b from-background/35 to-transparent"
           }`}
       >
         <div className="mx-auto max-w-7xl px-4 lg:px-10 h-14 flex items-center justify-between">
@@ -385,39 +367,11 @@ function Index() {
           </p>
           {/* COUNTDOWN */}
 
-          <div className="mt-8 flex items-center justify-center gap-4 md:gap-6 text-center">
-
-            <div className="w-[52px]">
-              <div className="text-3xl md:text-3xl font-display text-white/90 tracking-[0.12em]">
-                {String(timeLeft.days).padStart(2, "0")}
-              </div>
-
-              <div className="mt-1 text-[9px] md:text-xs tracking-[0.18em] text-cyan-300/55">
-                DAYS
-              </div>
-            </div>
-
-            <div className="w-[52px]">
-              <div className="text-3xl md:text-3xl font-display text-white/90 tracking-[0.12em]">
-                {String(timeLeft.hours).padStart(2, "0")}
-              </div>
-
-              <div className="mt-1 text-[9px] md:text-xs tracking-[0.18em] text-cyan-300/55">
-                HOURS
-              </div>
-            </div>
-
-            <div className="w-[52px]">
-              <div className="text-3xl md:text-3xl font-display text-white/90 tracking-[0.12em]">
-                {String(timeLeft.minutes).padStart(2, "0")}
-              </div>
-
-              <div className="mt-1 text-[9px] md:text-xs tracking-[0.1em] text-cyan-300/55 pl-0 -ml-[2px]">
-                MINUTES
-              </div>
-            </div>
-
-          </div>
+          <div className="mt-8 text-center">
+<div className="mt-4 text-[9px] md:text-sm tracking-[0.25em] text-cyan-300/70">
+    DATUM AKCE BUDE BRZY OZNÁMENO
+  </div>
+</div>
 
           {/* Hairline divider */}
           <div className="mt-8 h-px w-40 bg-gradient-to-r from-transparent via-[var(--cyan)] to-transparent" />
@@ -426,7 +380,7 @@ function Index() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
             <div className="flex items-center gap-2 text-foreground/90">
               <Calendar size={18} className="text-[var(--cyan)]" />
-              <span className="tracking-[0.2em] font-display text-sm">06 / 06 / 2026</span>
+              <span className="tracking-[0.2em] font-display text-sm">?? / 06 / 2027</span>
             </div>
             <div className="hidden md:block w-px h-4 bg-border" />
             <div className="flex items-center gap-2 text-foreground/90">
@@ -443,7 +397,7 @@ function Index() {
             <div className="hidden md:block w-px h-4 bg-border" />
             <div className="flex items-center gap-2 text-foreground/90">
               <Ticket size={18} className="text-[var(--cyan)]" />
-              <span className="tracking-[0.2em] font-display text-sm">17:00 — 04:45</span>
+              <span className="tracking-[0.2em] font-display text-sm">??:?? — ??:??</span>
             </div>
           </div>
 
@@ -451,15 +405,14 @@ function Index() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <button
               onClick={() =>
-  window.open(
-    "https://www.smsticket.cz/vstupenky/70162-next-d-n-b-session-w-tr-tactics-b2b-symplex-fotbalove-hriste-tesetice",
-    "_blank"
-  )
+  document.getElementById("kontakt")?.scrollIntoView({
+    behavior: "smooth",
+  })
 }
               className="px-8 py-3.5 rounded-md bg-[#1AC7D4] text-primary-foreground font-display tracking-[0.3em] text-[13px] hover:bg-[#4f35bf] hover:text-white
 hover:shadow-[0_0_28px_rgba(79,53,191,0.35)]"
             >
-              KOUPIT V PŘEDPRODEJI
+              SLEDUJ NOVINKY
             </button>
             <button
               onClick={() => go("lineup")}
@@ -475,16 +428,16 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
         {/* Bottom edge fade into next section */}
         <div className="absolute bottom-0 inset-x-0 h-96 bg-gradient-to-b from-transparent via-background/50 via-60% to-background z-[3]" />
       </section>
-      <div className="mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/15 to-transparent" />
+      <div className="mx-auto w-[75%] animate-pulse h-px bg-gradient-to-r from-transparent via-cyan-400/25 to-transparent" />
 
       {/* O AKCI */}
       <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent mb-16" />
       <section id="o-akci" className="relative pt-20 pb-24 md:pt-20 md:pb-32">
-        <div className="mx-auto max-w-5xl px-5 lg:px-10">
+        <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <h2 className="section-title font-display text-3xl md:text-5xl text-foreground">
             O AKCI
           </h2>
-          <div className="mt-10 grid md:grid-cols-2 gap-10 items-start">
+          <div className="mt-10 max-w-5xl grid md:grid-cols-2 gap-10 items-start">
             <p className="text-base md:text-lg leading-[1.9] text-white/70">
               <span className="text-foreground font-semibold">NEXT DNB SESSION</span> je od roku 2018 letní open air akce pro ty, kteří milují deep vibe, těžkou basu a noční atmosféru pod širým nebem. Místo, kde se každé léto potkávají milovníci DNB.
 
@@ -512,7 +465,7 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
           </h2>
 
           <p className="mt-4 text-sm tracking-[0.2em] text-muted-foreground font-display">
-            HEADLINERS
+            HEADLINERS{" · "}hosté posledního ročníku
           </p>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 max-w-7xl mx-auto">
@@ -582,7 +535,7 @@ transition-all duration-500"
           </div>
 
           <p className="mt-12 text-sm tracking-[0.25em] text-white/55 font-display">
-            SUPPORT DJ<small className="text-[0.8em] normal-case">s</small>
+            NEXT DNB SESSION CREW
           </p>
 
           <div className="hidden md:block pointer-events-none absolute left-1/2 -translate-x-1/2 mt-10 w-[420px] h-[420px] rounded-full bg-cyan-500/5 blur-[120px]" />
@@ -671,25 +624,32 @@ transition-all duration-500"
         id="timetable"
         className="relative pt-12 pb-24 md:pt-16 md:pb-32"
       >
-        <div className="mx-auto max-w-3xl px-5 lg:px-10">
-          <h2 className="section-title font-display text-3xl md:text-5xl">TIMETABLE</h2>
-          <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm shadow-[0_0_40px_rgba(0,255,255,0.04)]">
-            {TIMETABLE.map(([time, name], i) => (
-              <div
-                key={time}
-                className={`flex items-center gap-4 px-6 py-3 ${i !== TIMETABLE.length - 1
-                  ? "border-b border-white/10"
-                  : ""
-                  } hover:bg-cyan-400/[0.03] transition-colors duration-300`}
-              >
-                <div className="font-display text-lg md:text-xl text-[var(--cyan)] tracking-widest w-20">
-                  {time}
-                </div>
-                <div className="font-display text-sm md:text-lg tracking-widest text-foreground">
-                  {name}</div>
-              </div>
-            ))}
-          </div>
+        <div className="mx-auto max-w-7xl px-5 lg:px-10">
+          <h2 className="section-title font-display text-3xl md:text-5xl">PŘÍPRAVA ROČNÍKU 2027</h2>
+          <div className="mt-10 max-w-4xl mx-auto grid gap-4 md:grid-cols-4">
+  {[
+    ["NEXT DNB SESSION 2027", "PŘIPRAVUJEME DALŠÍ ROČNÍK AKCE"],
+    ["LINEUP", "BUDE POSTUPNĚ OZNÁMEN"],
+    ["TIMETABLE", "HARMONOGRAM ZVEŘEJNÍME PO UZAVŘENÍ LINEUPU"],
+    ["PŘEDPRODEJ", "BUDE SPUŠTĚN PO OZNÁMENÍ TERMÍNU"],
+    
+  ].map(([title, text]) => (
+    <div
+      key={title}
+      className="rounded-2xl border border-cyan-400/20 bg-white/[0.02] p-6 min-h-[170px] flex flex-col justify-between"
+    >
+      <div className="font-display text-xl text-white tracking-wide">
+        {title}
+      </div>
+
+      <div className="mt-6 text-xs tracking-[0.22em] text-cyan-300/75 font-display leading-relaxed">
+        {text}
+      </div>
+
+      <div className="mt-5 h-[2px] w-12 rounded-full bg-[#5b5cff]" />
+    </div>
+  ))}
+</div>
         </div>
       </section>
       <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14 animate-pulse">
@@ -817,48 +777,22 @@ transition-all duration-300"
             VSTUPENKY
           </p>
           <h2 className="mt-4 font-display text-4xl md:text-6xl text-foreground leading-none">
-            PŘEDPRODEJ A VSTUP NA MÍSTĚ
+            PŘEDPRODEJ PŘIPRAVUJEME
           </h2>
           <p className="mt-6 text-muted-foreground max-w-xl mx-auto">
-            Kup online v předprodeji, nebo zaplať hotově na místě.
+            Vstupenky spustíme společně s oznámením data akce a s oznámením prvních jmen lineupu. Sleduj naše sociální sítě, ať ti nic neuteče.
           </p>
 
-          <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            {[
-              { tier: "PŘEDPRODEJ", price: "430", note: "Online vstupenka" },
-              { tier: "NA MÍSTĚ", price: "480", note: "Hotově při vstupu" },
-            ].map((t) => (
-              <div
-                key={t.tier}
-                className="relative p-6 rounded-lg border bg-card/60 backdrop-blur border-border opacity-70"
-              >
-                <p className="font-display tracking-[0.2em] text-xs text-[var(--cyan)]">
-                  {t.tier}
-                </p>
-
-                <p className="mt-2 font-display text-4xl text-foreground">
-                  {t.price} Kč
-                </p>
-
-                <p className="mt-2 text-xs text-muted-foreground">
-                  {t.note}
-                </p>
-              </div>
-            ))}
-          </div>
-
           <a
-  href="https://www.smsticket.cz/vstupenky/70162-next-d-n-b-session-w-tr-tactics-b2b-symplex-fotbalove-hriste-tesetice"
-  target="_blank"
-  rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-3 px-10 py-5 rounded-md bg-[#1AC7D4]
-text-primary-foreground font-display tracking-[0.25em] text-base glow-cyan
-hover:bg-[#4f35bf] hover:text-white
-hover:shadow-[0_0_28px_rgba(79,53,191,0.35)]
-transition"
-          >
+  href="#kontakt"
+  className="mt-10 inline-flex items-center gap-3 px-10 py-5 rounded-md bg-[#1AC7D4]
+  text-primary-foreground font-display tracking-[0.25em] text-base glow-cyan
+  hover:bg-[#4f35bf] hover:text-white
+  hover:shadow-[0_0_28px_rgba(79,53,191,0.35)]
+  transition"
+>
             <Ticket size={20} />
-            KOUPIT VSTUPENKY
+            SOCIÁLNÍ SÍTĚ
           </a>
         </div>
       </section>
@@ -879,17 +813,17 @@ transition"
           <img
             src={logoneuroporn}
             alt="NEUROPORN"
-            className="w-33 mx-auto opacity-70 hover:opacity-100 transition-opacity"
+            className="w-33 mx-auto opacity-80 hover:opacity-100 transition-opacity"
           />
         </a>
 
       </div>
-      <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14">
+      <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14 animate-pulse">
   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
   <div className="absolute inset-0 blur-sm bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent" />
 </div>
       {/* SOCIAL / FOOTER */}
-      <footer id="kontakt" className="relative pt-12 pb-24 md:pt-16 md:pb-32">
+      <footer id="kontakt" className="relative pt-12 pb-10 md:pt-12 md:pb-10">
         <div className="mx-auto max-w-7xl px-5 lg:px-10 grid md:grid-cols-3 gap-10 items-center">
 
           <div>
@@ -900,7 +834,7 @@ transition"
               <br />
               Těšetice u Olomouce
               <br />
-              06 / 06 / 2026
+              ?? / 06 / 2027
             </p>
           </div>
 
