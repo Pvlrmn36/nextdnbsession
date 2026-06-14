@@ -88,7 +88,7 @@ const FAQ = [
   { q: "MŮŽU PŘIJÍT POZDĚJI??", a: "Ano. Dorazit můžeš kdykoliv během akce." },
   { q: "CO NA MÍSTĚ NAJDU?", a: "Kvalitní sound a lidi, kteří jedou DNB naplno až do rána." },
 ];
-const EVENT_DATE = new Date("2026-06-06T17:00:00");
+const EVENT_DATE = new Date("2027-06-06T17:00:00");
 function Index() {
   const [showAllSupport, setShowAllSupport] = useState(false);
 
@@ -906,7 +906,7 @@ hover:-translate-y-[2px]
             <p>info@nextdnbsession.cz</p>
 
             <p className="mt-2 text-xs tracking-widest">
-              © 2026 NEXT DNB SESSION
+              © NEXT DNB SESSION
 
               <p className="mt-2 text-xs tracking-widest">
               All Rights Reserved
