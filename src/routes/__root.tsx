@@ -111,6 +111,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       gtag('config', 'G-3R6XHH30ZJ');
     `,
   },
+  {
+  type: "application/ld+json",
+  children: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "NEXT DNB SESSION",
+    url: "https://nextdnbsession.cz",
+    logo: "https://nextdnbsession.cz/og-image.png",
+    sameAs: [
+      "https://www.facebook.com/nextdnbsession"
+    ],
+  }),
+},
+{
+  type: "application/ld+json",
+  children: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "NEXT DNB SESSION",
+    url: "https://nextdnbsession.cz",
+  }),
+},
 ],
   }),
   shellComponent: RootShell,
