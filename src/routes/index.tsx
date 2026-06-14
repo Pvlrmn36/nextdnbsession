@@ -75,7 +75,7 @@ const INFO = [
   { icon: MapPin, title: "LOKACE", text: "Těšetice u Olomouce • areál hřiště" },
   { icon: ParkingCircle, title: "PARKOVÁNÍ", text: "Omezená kapacita parkoviště\nDoporučujeme spolujízdu" },
 
-  { icon: Banknote, title: "PLATBA", text: "Vstup pouze hotově\nBar hotově i QR platby" },
+  { icon: Banknote, title: "PLATBA", text: "Vstup na místš i bar\nHotově • QR platby" },
   { icon: Beer, title: "BAR", text: "Pivo • drinky • nealko\nOtevřený po celou noc" },
   { icon: HeartHandshake, title: "RESPEKT", text: "Respekt k lidem, hudbě i místu\nBez konfliktů a problémů" },
   { icon: Trees, title: "OPEN AIR", text: "Hudba pod širým nebem\nLasery • kouř • rave atmosféra" },
@@ -427,12 +427,12 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
 
         {/* Bottom edge fade into next section */}
         <div className="absolute bottom-0 inset-x-0 h-96 bg-gradient-to-b from-transparent via-background/50 via-60% to-background z-[3]" />
+        <div className="absolute bottom-0 left-1/2 z-20 h-px w-[75%] -translate-x-1/2 animate-pulse bg-gradient-to-r from-transparent via-cyan-400/25 to-transparent" />
       </section>
-      <div className="mx-auto w-[75%] animate-pulse h-px bg-gradient-to-r from-transparent via-cyan-400/25 to-transparent" />
+      
 
       {/* O AKCI */}
-      <div className="md:hidden mx-auto w-[75%] h-px bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent mb-16" />
-      <section id="o-akci" className="relative pt-20 pb-24 md:pt-20 md:pb-32">
+      <section id="o-akci" className="relative pt-20 pb-24 md:pt-24 md:pb-32">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <h2 className="section-title font-display text-3xl md:text-5xl text-foreground">
             O AKCI

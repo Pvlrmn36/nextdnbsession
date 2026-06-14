@@ -72,7 +72,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "NEXT DNB SESSION 2026 | Drum n Bass Open Air | Těšetice u Olomouce" },
+      { title: "NEXT DNB SESSION 2027 | Drum n Bass Open Air | Těšetice u Olomouce" },
       { name: "description", content: "NEXT DNB SESSION je letní Drum n Bass Open Air v Těšeticích u Olomouce. Deep, Rollers, Neuro a Hard DNB pod širým nebem až do rána." },
       { property: "og:title", content: "NEXT DNB SESSION" },
       { property: "og:description", content: "Letní open air drum and bass akce. DEEP • ROLLERS • NEURO • HARD DNB." },
