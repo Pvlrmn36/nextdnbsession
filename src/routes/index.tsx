@@ -479,13 +479,11 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
                     setFlippedHeadliner(null)
                   }, 9000)
                 }}
-                className="group relative aspect-[4/4.5] overflow-hidden rounded-2xl border
-border-cyan-400/25
-shadow-[0_0_25px_rgba(0,255,255,0.08)]
-bg-white/[0.02]
-hover:border-[#4f35bf]
-hover:shadow-[0_0_30px_rgba(168,85,247,0.10)]
-transition-all duration-500"
+                className={`group relative aspect-[4/4.5] overflow-hidden rounded-2xl border bg-white/[0.02] transition-all duration-500 ${
+  flippedHeadliner === dj.name
+    ? "border-[#4f35bf] shadow-[0_0_30px_rgba(79,53,191,0.25)]"
+    : "border-cyan-400/25 shadow-[0_0_25px_rgba(0,255,255,0.08)] hover:border-[#4f35bf] hover:shadow-[0_0_30px_rgba(168,85,247,0.10)]"
+}`}
               >
                 <div className="relative w-full h-full">
                   <div
@@ -636,7 +634,7 @@ transition-all duration-500"
   ].map(([title, text]) => (
     <div
       key={title}
-      className="rounded-2xl border border-cyan-400/20 bg-white/[0.02] p-6 min-h-[170px] flex flex-col justify-between"
+      className="group relative p-6 min-h-[170px] flex flex-col justify-between rounded-lg border border-border border-[var(--cyan)]/10 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-[var(--cyan)]/30 hover:shadow-[0_0_25px_rgba(0,255,255,0.08)]"
     >
       <div className="font-display text-xl text-white tracking-wide">
         {title}
@@ -751,9 +749,9 @@ transition-all duration-300"
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="rounded-2xl border border-cyan-400/15 bg-white/[0.02] px-6 transition-all duration-300 hover:border-[#4f35bf]/40 bg-[#4f35bf]/5"
+                className="rounded-2xl border border-cyan-400/15 bg-white/[0.02] px-6 transition-all duration-300 data-[state=open]:border-[#4f35bf] data-[state=open]:bg-[#4f35bf]/5 hover:border-[#4f35bf]/40"
               >
-                <AccordionTrigger className="font-display text-lg tracking-[0.18em] text-foreground hover:text-[#4f35bf] hover:no-underline text-left py-6 transition-colors duration-300">
+                <AccordionTrigger className="font-display text-lg tracking-[0.18em] text-foreground hover:text-[#4f35bf] hover:no-underline text-left py-6 transition-colors duration-300 [&[data-state=open]>svg]:text-[#4f35bf]">
                   {item.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base leading-relaxed">
