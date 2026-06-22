@@ -12,10 +12,6 @@ import logoneuroporn from "@/assets/Neuroporn.png";
 import hero from "@/assets/backgroundhero.png";
 import dj1 from "@/assets/SYMPLEX x TR TACTICS.png";
 import dj2 from "@/assets/DRAX x TYBERUS x XENYH.png";
-import gallery1 from "@/assets/pořadatelé NxtDNB.jpg";
-import gallery2 from "@/assets/gallery2.jpg";
-import gallery3 from "@/assets/gallery3.jpg";
-import gallery4 from "@/assets/gallery4.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -89,6 +85,19 @@ const FAQ = [
   { q: "CO NA MÍSTĚ NAJDU?", a: "Kvalitní sound a lidi, kteří jedou DNB naplno až do rána." },
 ];
 const EVENT_DATE = new Date("2027-06-06T17:00:00");
+
+const galleryImages = [
+  "/gallery/2026/gallery-01.webp",
+  "/gallery/2026/gallery-02.webp",
+  "/gallery/2026/gallery-03.webp",
+  "/gallery/2026/gallery-04.webp",
+  "/gallery/2026/gallery-05.webp",
+  "/gallery/2026/gallery-06.webp",
+  "/gallery/2026/gallery-07.webp",
+  "/gallery/2026/gallery-08.webp",
+  "/gallery/2026/gallery-09.webp",
+];
+
 function Index() {
   const [showAllSupport, setShowAllSupport] = useState(false);
 
@@ -701,36 +710,58 @@ transition-all duration-300"
 </div>
 
       {/* GALLERY */}
-      <section id="galerie" className="relative pt-12 pb-24 md:pt-16 md:pb-32">
-        <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <h2 className="section-title font-display text-3xl md:text-5xl">GALERIE / AFTERMOVIE</h2>
-          <p className="mt-4 max-w-xl text-muted-foreground">
-            Vzpomínky z minulých ročníků. Atmosféra, kterou musíš zažít naživo.
-          </p>
-          <div className="mt-10 grid grid-cols-12 gap-4">
-            <div className="col-span-12 md:col-span-8 relative aspect-[16/9] overflow-hidden rounded-lg border border-border group">
-              <img src={gallery1} alt="Aftermovie" loading="lazy" width={1536} height={896}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-            </div>
-            <div className="col-span-12 md:col-span-4 grid grid-rows-2 gap-4">
-              <div className="relative overflow-hidden rounded-lg border border-border group">
-                <img src={gallery2} alt="" loading="lazy" width={1024} height={1024}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              </div>
-              <div className="relative overflow-hidden rounded-lg border border-border group">
-                <img src={gallery3} alt="" loading="lazy" width={1024} height={1024}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              </div>
-            </div>
-            <div className="col-span-12 md:col-span-12 relative aspect-[21/7] overflow-hidden rounded-lg border border-border group">
-              <img src={gallery4} alt="" loading="lazy" width={1024} height={1024}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
-            </div>
+<section id="galerie" className="relative pt-12 pb-24 md:pt-16 md:pb-32">
+  <div className="mx-auto max-w-7xl px-5 lg:px-10">
+    <h2 className="section-title font-display text-3xl md:text-5xl">
+      GALERIE
+    </h2>
+
+    <p className="mt-4 max-w-xl text-muted-foreground">
+      Vzpomínky z letošního ročníku. Atmosféra, kterou musíš zažít naživo.
+    </p>
+
+    <div className="mt-10 space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {galleryImages.slice(0, 2).map((image, index) => (
+          <div key={image} className="relative aspect-[16/9] overflow-hidden rounded-lg border border-border group">
+            <img
+              src={image}
+              alt={`Next DNB Session galerie ${index + 1}`}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+
+      <div className="flex justify-center gap-4 flex-wrap">
+        {galleryImages.slice(2, 5).map((image, index) => (
+          <div key={image} className="relative w-full md:w-[31%] aspect-[4/3] overflow-hidden rounded-lg border border-border group">
+            <img
+              src={image}
+              alt={`Next DNB Session galerie ${index + 3}`}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {galleryImages.slice(5, 9).map((image, index) => (
+          <div key={image} className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border group">
+            <img
+              src={image}
+              alt={`Next DNB Session galerie ${index + 6}`}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
       <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14 animate-pulse">
   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
   <div className="absolute inset-0 blur-sm bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent" />
