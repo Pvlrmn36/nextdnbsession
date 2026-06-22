@@ -543,7 +543,7 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
             {(showAllSupport ? SUPPORT : SUPPORT.slice(0, 8)).map((dj) => (
               <div
                 key={dj.name}
-                className="rounded-xl border border-violet-400/20 bg-white/[0.03] px-4 py-3 text-center"
+                className="rounded-xl border border-cyan-400/20 bg-white/[0.03] px-4 py-3 text-center"
               >
                 <p className="font-display text-base tracking-[0.08em] text-white">
                   {dj.name}
