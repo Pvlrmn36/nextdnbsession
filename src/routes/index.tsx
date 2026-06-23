@@ -723,7 +723,10 @@ transition-all duration-300"
     <div className="mt-10 space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {galleryImages.slice(0, 2).map((image, index) => (
-          <div key={image} className="relative aspect-[16/9] overflow-hidden rounded-lg border border-border group">
+          <div
+  key={image}
+  className="relative aspect-[16/9] overflow-hidden rounded-lg border border-transparent group hover:border-[#4f35bf]/40 hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500"
+>
             <img
               src={image}
               alt={`Next DNB Session galerie ${index + 1}`}
@@ -736,7 +739,7 @@ transition-all duration-300"
 
       <div className="flex justify-center gap-4 flex-wrap">
         {galleryImages.slice(2, 5).map((image, index) => (
-          <div key={image} className="relative w-full md:w-[31%] aspect-[4/3] overflow-hidden rounded-lg border border-border group">
+          <div key={image} className="relative w-full md:w-[31%] aspect-[4/3] overflow-hidden rounded-lg border border-transparent group hover:border-[#4f35bf]/40 hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
             <img
               src={image}
               alt={`Next DNB Session galerie ${index + 3}`}
@@ -747,9 +750,10 @@ transition-all duration-300"
         ))}
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {galleryImages.slice(5, 9).map((image, index) => (
-          <div key={image} className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border group">
+          <div key={image} className="relative aspect-[4/3] overflow-hidden rounded-lg border border-transparent group hover:border-[#4f35bf]/40
+hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
             <img
               src={image}
               alt={`Next DNB Session galerie ${index + 6}`}
