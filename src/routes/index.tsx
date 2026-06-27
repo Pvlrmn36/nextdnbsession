@@ -45,9 +45,9 @@ const HEADLINERS = [
 
 const SUPPORT = [
   { name: "BABS", style: "NEURO"},
-  { name: "DRAWBACK", style: "ROLLERS"},
-  { name: "L-ORI", style: "NEURO"},
-  { name: "ONEBLOOB", style: "NEURO"},
+  { name: "DRAWBACK", style: "DEEP · ROLLERS", instagram: "https://www.instagram.com/drawback_dnb/"},
+  { name: "L-ORI", style: "NEURO", instagram: "https://www.instagram.com/l_ori.dnb/" },
+  { name: "ONEBLOOB", style: "NEURO", instagram: "https://www.instagram.com/onebloodnb/"},
 ];
 
 const TIMETABLE = [
@@ -565,17 +565,32 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
           {/* MOBILE SUPPORT LIST */}
           <div className="mt-6 grid grid-cols-2 gap-3 md:hidden">
             {(showAllSupport ? SUPPORT : SUPPORT.slice(0, 8)).map((dj) => (
-              <div
-                key={dj.name}
-                className="rounded-xl border border-cyan-400/20 bg-white/[0.03] px-4 py-3 text-center"
-              >
-                <p className="font-display text-base tracking-[0.08em] text-white">
-                  {dj.name}
-                </p>
-                <p className="mt-1 text-[10px] tracking-[0.14em] text-cyan-300/75 font-display">
-                  {dj.style}
-                </p>
-              </div>
+                <a
+  key={dj.name}
+  href={dj.instagram || undefined}
+  target={dj.instagram ? "_blank" : undefined}
+  rel={dj.instagram ? "noopener noreferrer" : undefined}
+  className={`group relative rounded-xl border border-cyan-400/20 bg-white/[0.03] px-4 py-3 text-center transition-all duration-300 ${
+    dj.instagram
+      ? "cursor-pointer active:border-[#4f35bf] hover:-translate-y-1"
+      : "cursor-default"
+  }`}
+>
+  {dj.instagram && (
+    <Instagram
+      size={14}
+      className="absolute top-3 right-3 text-cyan-300/30 transition-all duration-300 group-active:text-cyan-300 group-active:scale-110"
+    />
+  )}
+
+  <p className="font-display text-base tracking-[0.08em] text-white">
+    {dj.name}
+  </p>
+
+  <p className="mt-1 text-[10px] tracking-[0.14em] text-cyan-300/75 font-display">
+    {dj.style}
+  </p>
+</a>
             ))}
           </div>
           {SUPPORT.length > 8 && (
@@ -592,10 +607,23 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
           {/* DESKTOP SUPPORT CARDS */}
           <div className="hidden md:grid mt-6 grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-5">
             {visibleSupport.map((dj, index) => (
-              <article
+              <a
   key={`${dj.name}-${index}`}
-  className="relative rounded-xl border border-cyan-400/15 bg-white/[0.025] p-6 min-h-[120px] flex flex-col justify-center overflow-hidden"
+  href={dj.instagram || undefined}
+  target={dj.instagram ? "_blank" : undefined}
+  rel={dj.instagram ? "noopener noreferrer" : undefined}
+  className={`group relative rounded-xl border border-cyan-400/15 bg-white/[0.025] p-6 min-h-[120px] flex flex-col justify-center overflow-hidden transition-all duration-300 ${
+    dj.instagram
+      ? "cursor-pointer hover:border-[#4f35bf] hover:shadow-[0_0_25px_rgba(168,85,247,0.12)] hover:scale-[1.015]"
+      : "cursor-default"
+  }`}
 >
+  {dj.instagram && (
+  <Instagram
+    size={14}
+    className="absolute top-3 right-3 z-20 text-cyan-300/25 transition-all duration-200 group-hover:text-cyan-300 group-hover:scale-110"
+  />
+)}
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(79,53,191,0.22),transparent_45%)]" />
 
   <div className="relative z-10">
@@ -612,7 +640,7 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
   style={{ background: "var(--gradient-logo)" }}
 />
   </div>
-</article>
+</a>
             ))}
             {hiddenSupportCount > 0 && (
               <div className="col-span-full mt-8 flex justify-center">
