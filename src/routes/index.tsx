@@ -258,11 +258,15 @@ const visibleSupport = showAllSupport ? SUPPORT : SUPPORT.slice(0, 12);
           </nav>
 
           <button
-            className="md:hidden text-foreground p-1"
-            onClick={() => setOpen(!open)}
-            aria-label="Menu"
-          >
-            {open ? <X size={22} /> : <Menu size={22} />}
+  className={`md:hidden p-2 rounded-lg border transition-all duration-300 ${
+    open
+      ? "text-[#4f35bf] border-[#4f35bf]/40 bg-[#4f35bf]/10"
+      : "text-[#1AC7D4] border-cyan-400/15 bg-white/[0.02] hover:text-[#4f35bf] hover:border-[#4f35bf]/40"
+  }`}
+  onClick={() => setOpen(!open)}
+  aria-label="Menu"
+>
+            {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
@@ -760,27 +764,26 @@ transition-all duration-300"
     </h2>
 
     <p className="mt-4 max-w-xl text-muted-foreground">
-      Vzpomínky z letošního ročníku. Atmosféra, kterou musíš zažít naživo.
+      Ohlédnutí za ročníkem 2026. Momentky a energie jedné letní noci.
     </p>
 
 <div className="mt-10">
   
   <div
-  onClick={toggleAftermovie}
-  className="group relative aspect-video cursor-pointer overflow-hidden rounded-xl border border-transparent transition-all duration-500 hover:border-[#4f35bf]/40 hover:shadow-[0_0_24px_rgba(79,53,191,0.18)]"
+  onClick={!playAftermovie ? () => setPlayAftermovie(true) : undefined}
+  className={`group relative aspect-video overflow-hidden rounded-xl border border-transparent transition-all duration-500 hover:border-[#4f35bf]/40 hover:shadow-[0_0_24px_rgba(79,53,191,0.18)] ${
+  !playAftermovie ? "cursor-pointer" : ""
+}`}
 >
-  <video
-    ref={aftermovieRef}
-  controls={false}
-  preload="metadata"
-  onPlay={() => setIsPlaying(true)}
-  onPause={() => setIsPlaying(false)}
-  onEnded={() => setIsPlaying(false)}
-  className="relative z-10 h-full w-full object-cover"
-  >
-  <source src="/video/aftermovie-2026.mp4" type="video/mp4" />
-  Tvůj prohlížeč nepodporuje HTML5 video.
-</video>
+  {playAftermovie && (
+  <iframe
+    className="absolute inset-0 z-20 h-full w-full"
+    src="https://www.youtube.com/embed/hTSPsjQgzLM?autoplay=1&rel=0"
+    title="NEXT DNB SESSION 2026 Official Aftermovie"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  />
+)}
 
   {!isPlaying && !playAftermovie && (
     <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
@@ -804,7 +807,7 @@ transition-all duration-300"
     </p>
 
     <p className="mt-3 max-w-xl px-6 text-sm md:text-base text-white/75">
-      Zažij znovu energii, světla a atmosféru NEXT DNB SESSION 2026.
+      Nezapomenutelná atmosféra. Skvělí lidé. Těžké basy.
     </p>
   </>
 )}
