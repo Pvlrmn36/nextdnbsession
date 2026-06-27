@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   MapPin, ParkingCircle, Beer, Tent, Banknote, HeartHandshake, Trees,
   Instagram, Facebook, Calendar, Ticket, Menu, X,
@@ -99,9 +99,24 @@ const galleryImages = [
 ];
 
 function Index() {
-  const [showAllSupport, setShowAllSupport] = useState(false);
+  const [playAftermovie, setPlayAftermovie] = useState(false);
+const aftermovieRef = useRef<HTMLVideoElement>(null);
+const [isPlaying, setIsPlaying] = useState(false);
+const toggleAftermovie = () => {
+  const video = aftermovieRef.current;
+  if (!video) return;
 
-  const visibleSupport = showAllSupport ? SUPPORT : SUPPORT.slice(0, 12);
+  if (video.paused) {
+    setPlayAftermovie(true);
+    setIsPlaying(true);
+    video.play();
+  } else {
+    setIsPlaying(false);
+    video.pause();
+  }
+};
+  const [showAllSupport, setShowAllSupport] = useState(false);
+const visibleSupport = showAllSupport ? SUPPORT : SUPPORT.slice(0, 12);
   const hiddenSupportCount = SUPPORT.length - 12;
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -719,6 +734,70 @@ transition-all duration-300"
     <p className="mt-4 max-w-xl text-muted-foreground">
       Vzpomínky z letošního ročníku. Atmosféra, kterou musíš zažít naživo.
     </p>
+
+<div className="mt-10">
+  
+  <div
+  onClick={toggleAftermovie}
+  className="group relative aspect-video cursor-pointer overflow-hidden rounded-xl border border-transparent transition-all duration-500 hover:border-[#4f35bf]/40 hover:shadow-[0_0_24px_rgba(79,53,191,0.18)]"
+>
+  <video
+    ref={aftermovieRef}
+  controls={false}
+  preload="metadata"
+  onPlay={() => setIsPlaying(true)}
+  onPause={() => setIsPlaying(false)}
+  onEnded={() => setIsPlaying(false)}
+  className="relative z-10 h-full w-full object-cover"
+  >
+  <source src="/video/aftermovie-2026.mp4" type="video/mp4" />
+  Tvůj prohlížeč nepodporuje HTML5 video.
+</video>
+
+  {!isPlaying && !playAftermovie && (
+    <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+      <img
+        src="/video/aftermovie-cover.webp"
+        alt="NEXT DNB SESSION 2026 aftermovie"
+        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+
+      <div className="absolute inset-0 bg-black/35" />
+
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+        <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full border border-white/40 bg-black/40 text-white backdrop-blur-sm transition-transform duration-500 group-hover:scale-110">
+          <span className="ml-1 text-3xl">▶</span>
+        </div>
+
+        {!isPlaying && (
+  <>
+    <p className="font-display text-2xl md:text-4xl tracking-wide text-white">
+      AFTERMOVIE 2026
+    </p>
+
+    <p className="mt-3 max-w-xl px-6 text-sm md:text-base text-white/75">
+      Zažij znovu energii, světla a atmosféru NEXT DNB SESSION 2026.
+    </p>
+  </>
+)}
+{!isPlaying && playAftermovie && (
+  <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+    <div className="flex h-20 w-20 items-center justify-center rounded-full border border-white/40 bg-black/40 text-white backdrop-blur-sm transition-transform duration-500 group-hover:scale-110">
+      <span className="ml-1 text-3xl">▶</span>
+    </div>
+  </div>
+)}
+      </div>
+    </div>
+  )}
+</div>
+</div>
+
+<div className="mt-14">
+  <h3 className="font-display text-2xl md:text-3xl uppercase tracking-wide">
+    FOTOGALERIE
+  </h3>
+</div>
 
     <div className="mt-10 space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
