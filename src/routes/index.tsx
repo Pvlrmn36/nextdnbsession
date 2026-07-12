@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
   MapPin, ParkingCircle, Beer, Tent, Banknote, HeartHandshake, Trees,
-  Instagram, Facebook, Calendar, Ticket, Menu, X,
+  Instagram, Youtube, Facebook, Calendar, Ticket, Menu, X,
 } from "lucide-react";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
@@ -467,11 +467,11 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
           </h2>
           <div className="mt-10 max-w-5xl grid md:grid-cols-2 gap-10 items-start">
             <p className="text-base md:text-lg leading-[1.9] text-white/70">
-              <span className="text-foreground font-semibold">NEXT DNB SESSION</span> je od roku 2018 letní open air akce pro ty, kteří milují deep vibe, těžkou basu a noční atmosféru pod širým nebem. Místo, kde se každé léto potkávají milovníci DNB.
+              <span className="text-foreground font-semibold">NEXT DNB SESSION</span> je od roku 2018 letní open air akce pro ty, které spojuje deep vibe, těžká basa a noční atmosféra pod širým nebem. Místo, kde se každý rok potkávají milovníci DNB.
 
             </p>
             <p className="text-base md:text-lg leading-[1.9] text-white/70">
-              Žádný přeplácaný festival. Jen hudba a lidi, kteří přišli kvůli stejné věci. Od západu slunce až do rána jedeme naplno deep, rollers, neuro i hard DNB. Přidáš se?
+              Žádný přeplácaný festival. Jen hudba a lidé, kteří přišli kvůli stejné věci. Od západu slunce až do rána jedeme naplno deep, rollers, neuro i hard DNB. Přidáš se?
             </p>
 
           </div>
@@ -1012,6 +1012,31 @@ hover:-translate-y-[2px]
                   className="transition-transform duration-300 group-hover:scale-110"
                 />
               </a>
+
+<a
+  href="https://www.youtube.com/@NEXTDNBSESSION"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="YouTube"
+  className="
+    group
+    w-14 h-14 rounded-xl
+    border border-cyan-400/40
+    flex items-center justify-center
+    text-cyan-300
+    transition-all duration-300
+    hover:border-[#4f35bf]
+    hover:bg-[#4f35bf]/15
+    hover:text-white
+    hover:shadow-[0_0_18px_rgba(79,53,191,0.20)]
+    hover:-translate-y-[2px]
+  "
+>
+  <Youtube
+    size={18}
+    className="transition-transform duration-300 group-hover:scale-110"
+  />
+</a>
 
               <a
                 href="https://facebook.com/"
