@@ -467,11 +467,11 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
           </h2>
           <div className="mt-10 max-w-5xl grid md:grid-cols-2 gap-10 items-start">
             <p className="text-base md:text-lg leading-[1.9] text-white/70">
-              <span className="text-foreground font-semibold">NEXT DNB SESSION</span> je od roku 2018 letní open air akce pro ty, které spojuje deep vibe, těžká basa a noční atmosféra pod širým nebem. Místo, kde se každý rok potkávají milovníci DNB.
+              <span className="text-foreground font-semibold">NEXT DNB SESSION</span> je od roku 2018 letní open air akce pro ty, kteří chtějí zažít jedinečnou atmosféru pod širým nebem. Místo, kde se každý rok potkávají milovníci drum n bass.
 
             </p>
             <p className="text-base md:text-lg leading-[1.9] text-white/70">
-              Žádný přeplácaný festival. Jen hudba a lidé, kteří přišli kvůli stejné věci. Od západu slunce až do rána jedeme naplno deep, rollers, neuro i hard DNB. Přidáš se?
+              Žádný přeplácaný festival. Jen hudba a lidé, kteří sdílí stejnou vášeň. Od západu slunce až do rána jedeme naplno deep, rollers, neuro i hard DNB. Přidáš se?
             </p>
 
           </div>
