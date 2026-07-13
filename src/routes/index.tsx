@@ -807,7 +807,7 @@ transition-all duration-300"
     </p>
 
     <p className="mt-3 max-w-xl px-6 text-sm md:text-base text-white/75">
-      Nezapomenutelná atmosféra. Skvělí lidé. Těžké basy.
+      Nezapomenutelná atmosféra. Skvělí lidé. Stejná vášeň.
     </p>
   </>
 )}
