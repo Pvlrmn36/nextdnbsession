@@ -807,7 +807,7 @@ transition-all duration-300"
     </p>
 
     <p className="mt-3 max-w-xl px-6 text-sm md:text-base text-white/75">
-      Nezapomenutelná atmosféra. Skvělí lidé. Stejná vášeň.
+      Skvělá hudba. Nezapomenutelná atmosféra. Skvělí lidé.
     </p>
   </>
 )}
@@ -941,7 +941,7 @@ hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
       </section>
 
       {/* POWERED BY NEUROPORN */}
-      <div className="pt-6 pb-24 text-center">
+      <div className="pt-6 pb-12 md:pb-24 text-center">
 
         <p className="text-xs tracking-[0.3em] text-muted-foreground">
           POWERED BY NEUROPORN
