@@ -989,7 +989,7 @@ hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
 
             <div className="mt-4 flex justify-center gap-4">
               <a
-                href="https://www.instagram.com/next_dnb_session/"
+                href="https://www.instagram.com/nextdnbsession/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
