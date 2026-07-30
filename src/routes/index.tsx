@@ -989,7 +989,7 @@ hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
 
             <div className="mt-4 flex justify-center gap-4">
               <a
-                href="https://www.instagram.com/nextdnbsession/"
+                href="https://www.instagram.com/nextdnbsessioncz/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -1014,7 +1014,7 @@ hover:-translate-y-[2px]
               </a>
 
 <a
-  href="https://www.youtube.com/@NEXTDNBSESSION"
+  href="https://www.youtube.com/@NEXTDNBSESSIONCZ"
   target="_blank"
   rel="noopener noreferrer"
   aria-label="YouTube"
@@ -1039,7 +1039,7 @@ hover:-translate-y-[2px]
 </a>
 
               <a
-                href="https://facebook.com/"
+                href="https://facebook.com/nextdnbsessioncz/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
