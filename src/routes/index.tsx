@@ -12,6 +12,7 @@ import logoneuroporn from "@/assets/Neuroporn.png";
 import hero from "@/assets/backgroundhero.png";
 import dj1 from "@/assets/SYMPLEX x TR TACTICS.png";
 import dj2 from "@/assets/DRAX x TYBERUS x XENYH.png";
+import playIcon from "@/assets/Play.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -466,11 +467,11 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
             O AKCI
           </h2>
           <div className="mt-10 max-w-5xl grid md:grid-cols-2 gap-10 items-start">
-            <p className="text-base md:text-lg leading-[1.9] text-white/70">
-              <span className="text-foreground font-semibold">NEXT DNB SESSION</span> je od roku 2018 letní open air akce pro ty, kteří chtějí zažít jedinečnou atmosféru pod širým nebem. Místo, kde se každý rok potkávají milovníci drum n bass.
+            <p className="text-[19px] leading-[1.75] text-white/70">
+              <span className="text-foreground font-semibold font-display text-[23px] tracking-[0.04em]">NEXT DNB SESSION</span> je od roku 2018 letní open air akce pro ty, kteří chtějí zažít jedinečnou atmosféru pod širým nebem. Místo, kde se každý rok potkávají milovníci drum n bass.
 
             </p>
-            <p className="text-base md:text-lg leading-[1.9] text-white/70">
+            <p className="text-[19px] leading-[1.75] text-white/70">
               Žádný přeplácaný festival. Jen hudba a lidé, kteří sdílí stejnou vášeň. Od západu slunce až do rána jedeme naplno deep, rollers, neuro i hard DNB. Přidáš se?
             </p>
 
@@ -551,7 +552,7 @@ hover:shadow-[0_0_28px_rgba(106,76,255,0.35)]"
                       {dj.name}
                     </h3>
 
-                    <p className="text-sm leading-relaxed text-white/75">
+                    <p className="text-[15px] leading-[1.7] text-white/75">
                       {dj.bio}
                     </p>
                   </div>
@@ -728,7 +729,7 @@ items-center justify-center text-[var(--cyan)] transition">
                 <h3 className="mt-4 font-display text-xl tracking-wider text-foreground group-hover:text-[#4f35bf] transition-colors duration-300">
                   {title}
                 </h3>
-                <p className="mt-2 whitespace-pre-line text-sm text-muted-foreground">
+                <p className="mt-2 whitespace-pre-line text-[15px] leading-[1.65] text-muted-foreground">
                   {text}
                 </p>
                 {title === "LOKACE" && (
@@ -763,7 +764,7 @@ transition-all duration-300"
       GALERIE
     </h2>
 
-    <p className="mt-4 max-w-xl text-muted-foreground">
+    <p className="mt-4 max-w-xl text-[17px] leading-[1.7] text-muted-foreground">
       Ohlédnutí za ročníkem 2026. Momentky a energie jedné letní noci.
     </p>
 
@@ -796,9 +797,11 @@ transition-all duration-300"
       <div className="absolute inset-0 bg-black/35" />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-        <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full border border-white/40 bg-black/40 text-white backdrop-blur-sm transition-transform duration-500 group-hover:scale-110">
-          <span className="ml-1 text-3xl">▶</span>
-        </div>
+        <img
+          src={playIcon}
+          alt=""
+          className="mb-5 h-20 w-20 object-contain transition-transform duration-500 group-hover:scale-110"
+        />
 
         {!isPlaying && (
   <>
@@ -806,16 +809,18 @@ transition-all duration-300"
       AFTERMOVIE 2026
     </p>
 
-    <p className="mt-3 max-w-xl px-6 text-sm md:text-base text-white/75">
+    <p className="mt-3 max-w-xl px-6 text-[15px] md:text-[17px] leading-[1.65] text-white/75">
       Skvělá hudba. Nezapomenutelná atmosféra. Skvělí lidé.
     </p>
   </>
 )}
 {!isPlaying && playAftermovie && (
   <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-    <div className="flex h-20 w-20 items-center justify-center rounded-full border border-white/40 bg-black/40 text-white backdrop-blur-sm transition-transform duration-500 group-hover:scale-110">
-      <span className="ml-1 text-3xl">▶</span>
-    </div>
+    <img
+      src={playIcon}
+      alt=""
+      className="h-20 w-20 object-contain transition-transform duration-500 group-hover:scale-110"
+    />
   </div>
 )}
       </div>
@@ -874,6 +879,23 @@ hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
         ))}
       </div>
     </div>
+
+    <div className="mt-16 md:mt-20 text-center">
+      <h3 className="font-display text-2xl md:text-3xl tracking-wide">
+        CHCEŠ VIDĚT VÍC?
+      </h3>
+      <p className="mt-3 text-[17px] leading-[1.7] text-muted-foreground">
+        Kompletní fotogalerii z NEXT DNB SESSION najdeš na našem Facebooku.
+      </p>
+      <a
+        href="https://www.facebook.com/media/set/?set=a.122098079145418556&type=3"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-7 inline-flex items-center justify-center rounded-md border border-cyan-400/40 px-8 py-3.5 font-display text-sm tracking-[0.25em] text-cyan-300 transition-all duration-300 hover:border-[#4f35bf] hover:bg-[#4f35bf]/15 hover:text-white hover:shadow-[0_0_18px_rgba(79,53,191,0.20)]"
+      >
+        PROHLÉDNOUT VŠECHNY FOTKY
+      </a>
+    </div>
   </div>
 </section>
       <div className="relative mx-auto w-[70%] h-px mb-7 md:mb-14 animate-pulse">
@@ -899,7 +921,7 @@ hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
                 <AccordionTrigger className="font-display text-lg tracking-[0.18em] text-foreground hover:text-[#4f35bf] hover:no-underline text-left py-6 transition-colors duration-300 [&[data-state=open]>svg]:text-[#4f35bf]">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-base leading-relaxed">
+                <AccordionContent className="text-muted-foreground text-[17px] leading-[1.75]">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>
@@ -922,7 +944,7 @@ hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
           <h2 className="mt-4 font-display text-4xl md:text-6xl text-foreground leading-none">
             PŘEDPRODEJ PŘIPRAVUJEME
           </h2>
-          <p className="mt-6 text-muted-foreground max-w-xl mx-auto">
+          <p className="mt-6 text-[19px] leading-[1.75] text-muted-foreground max-w-xl mx-auto">
             Vstupenky spustíme společně s oznámením data akce a s oznámením prvních jmen lineupu. Sleduj naše sociální sítě, ať ti nic neuteče.
           </p>
 
@@ -972,7 +994,7 @@ hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
           <div>
             <img src={logo} alt="NEXT DNB SESSION" className="h-16 w-16" />
 
-            <p className="mt-4 text-sm text-muted-foreground max-w-xs">
+            <p className="mt-4 text-[15px] leading-[1.65] text-muted-foreground max-w-xs">
               DNB OPEN AIR
               <br />
               Těšetice u Olomouce
