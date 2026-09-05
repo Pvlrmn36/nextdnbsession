@@ -918,7 +918,7 @@ hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
                 value={`item-${i}`}
                 className="rounded-2xl border border-cyan-400/15 bg-white/[0.02] px-6 transition-all duration-300 data-[state=open]:border-[#4f35bf] data-[state=open]:bg-[#4f35bf]/5 hover:border-[#4f35bf]/40"
               >
-                <AccordionTrigger className="font-display text-lg tracking-[0.18em] text-foreground hover:text-[#4f35bf] hover:no-underline text-left py-6 transition-colors duration-300 [&[data-state=open]>svg]:text-[#4f35bf]">
+                <AccordionTrigger className="font-display text-lg tracking-[0.18em] text-foreground data-[state=open]:text-[#4f35bf] hover:text-[#4f35bf] hover:no-underline text-left py-6 transition-colors duration-300 [&[data-state=open]>svg]:text-[#4f35bf]">
                   {item.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-[17px] leading-[1.75]">
@@ -957,11 +957,43 @@ hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
   transition"
 >
             <Ticket size={20} />
-            SOCIÁLNÍ SÍTĚ
+            SLEDUJ NÁS
           </a>
         </div>
       </section>
 
+      {/* SOCIAL */}
+      <div id="kontakt" className="px-5 pb-12 md:pb-24 text-center">
+        <p className="font-display text-lg tracking-[0.2em] text-foreground/90">
+          SOCIÁLNÍ SÍTĚ
+        </p>
+        <p className="mx-auto mt-4 max-w-[15rem] sm:max-w-xl font-sans text-[15px] leading-[1.65] text-muted-foreground">
+          Novinky, hudba, fotky a videa z NEXT DNB SESSION.
+        </p>
+        <div className="mt-6 flex justify-center gap-4">
+          {[
+            { name: "Instagram", href: "https://www.instagram.com/nextdnbsessioncz/", Icon: Instagram },
+            { name: "YouTube", href: "https://www.youtube.com/@NEXTDNBSESSIONCZ", Icon: Youtube },
+            { name: "Facebook", href: "https://facebook.com/nextdnbsessioncz/", Icon: Facebook },
+          ].map(({ name, href, Icon }) => (
+            <a
+              key={name}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={name}
+              className="group flex flex-col items-center gap-2 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4f35bf]"
+            >
+              <span className="flex h-14 w-14 items-center justify-center rounded-xl border border-cyan-400/40 text-cyan-300 transition-all duration-300 group-hover:border-[#4f35bf] group-hover:bg-[#4f35bf]/15 group-hover:text-white group-hover:shadow-[0_0_18px_rgba(79,53,191,0.20)] motion-safe:group-hover:-translate-y-px group-focus-visible:border-[#4f35bf]">
+                <Icon size={18} />
+              </span>
+              <span className="font-display text-xs tracking-[0.12em] text-muted-foreground">
+                {name.toUpperCase()}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
       {/* POWERED BY NEUROPORN */}
       <div className="pt-6 pb-12 md:pb-24 text-center">
 
@@ -987,14 +1019,15 @@ hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
   <div className="absolute inset-0 blur-sm bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent" />
 </div>
-      {/* SOCIAL / FOOTER */}
-      <footer id="kontakt" className="relative pt-12 pb-10 md:pt-12 md:pb-10">
-        <div className="mx-auto max-w-7xl px-5 lg:px-10 grid md:grid-cols-3 gap-10 items-center">
+      {/* FOOTER */}
+      <footer className="relative pt-12 pb-10 md:pt-12 md:pb-10">
+        <img src={logo} alt="NEXT DNB SESSION" className="mx-auto mb-4 h-16 w-16 sm:hidden" />
+        <div className="mx-auto max-w-7xl px-5 lg:px-10 grid grid-cols-[minmax(0,1fr)_auto] sm:grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-10 sm:gap-10 items-start sm:items-center">
 
           <div>
-            <img src={logo} alt="NEXT DNB SESSION" className="h-16 w-16" />
+            <img src={logo} alt="NEXT DNB SESSION" className="hidden h-16 w-16 sm:block" />
 
-            <p className="mt-4 text-[15px] leading-[1.65] text-muted-foreground max-w-xs">
+            <p className="sm:mt-4 text-[15px] leading-[1.65] text-muted-foreground max-w-xs">
               DNB OPEN AIR
               <br />
               Těšetice u Olomouce
@@ -1003,102 +1036,13 @@ hover:shadow-[0_0_15px_rgba(79,53,191,0.12)] transition-all duration-500">
             </p>
           </div>
 
-          <div className="text-center">
+          <div className="relative top-[-1.625px] sm:top-0 md:col-start-3 md:text-right text-sm text-muted-foreground">
+            <p className="text-[15px] sm:text-sm whitespace-nowrap">info@nextdnbsession.cz</p>
 
-            <p className="mt-2 font-display text-l tracking-[0.2em] text-muted-foreground">
-              sociální sítě
-            </p>
-
-            <div className="mt-4 flex justify-center gap-4">
-              <a
-                href="https://www.instagram.com/nextdnbsessioncz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="
-      group
-w-14 h-14 rounded-xl
-border border-cyan-400/40
-flex items-center justify-center
-text-cyan-300
-transition-all duration-300
-hover:border-[#4f35bf]
-hover:bg-[#4f35bf]/15
-hover:text-white
-hover:shadow-[0_0_18px_rgba(79,53,191,0.20)]
-hover:-translate-y-[2px]
-    "
-              >
-                <Instagram
-                  size={18}
-                  className="transition-transform duration-300 group-hover:scale-110"
-                />
-              </a>
-
-<a
-  href="https://www.youtube.com/@NEXTDNBSESSIONCZ"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="YouTube"
-  className="
-    group
-    w-14 h-14 rounded-xl
-    border border-cyan-400/40
-    flex items-center justify-center
-    text-cyan-300
-    transition-all duration-300
-    hover:border-[#4f35bf]
-    hover:bg-[#4f35bf]/15
-    hover:text-white
-    hover:shadow-[0_0_18px_rgba(79,53,191,0.20)]
-    hover:-translate-y-[2px]
-  "
->
-  <Youtube
-    size={18}
-    className="transition-transform duration-300 group-hover:scale-110"
-  />
-</a>
-
-              <a
-                href="https://facebook.com/nextdnbsessioncz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="
-      group
-w-14 h-14 rounded-xl
-border border-cyan-400/40
-flex items-center justify-center
-text-cyan-300
-transition-all duration-300
-hover:border-[#4f35bf]
-hover:bg-[#4f35bf]/15
-hover:text-white
-hover:shadow-[0_0_18px_rgba(79,53,191,0.20)]
-hover:-translate-y-[2px]
-    "
-              >
-                <Facebook
-                  size={18}
-                  className="transition-transform duration-300 group-hover:scale-110"
-                />
-              </a>
-            </div>
-
-            <p className="mt-4 text-sm text-muted-foreground">
-
-            </p>
-
-          </div>
-
-          <div className="md:text-right text-sm text-muted-foreground">
-            <p>info@nextdnbsession.cz</p>
-
-            <p className="mt-2 text-xs tracking-widest">
+            <p className="mt-2 text-[15px] sm:text-xs tracking-widest">
               © NEXT DNB SESSION
 
-              <p className="mt-2 text-xs tracking-widest">
+              <p className="mt-2 text-[15px] sm:text-xs tracking-widest">
               All Rights Reserved
             </p>
             </p>
