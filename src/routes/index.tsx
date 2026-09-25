@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import logo from "@/assets/Logo NxtDNB.png";
 import logoneuroporn from "@/assets/Neuroporn.png";
-import hero from "@/assets/backgroundhero.png";
+import hero from "@/assets/background-hero.jpg";
 import dj1 from "@/assets/SYMPLEX x TR TACTICS.png";
 import dj2 from "@/assets/DRAX x TYBERUS x XENYH.png";
 import playIcon from "@/assets/Play.png";
